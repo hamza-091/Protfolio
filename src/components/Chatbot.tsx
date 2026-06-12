@@ -14,8 +14,9 @@ const SUGGESTIONS = [
 
 export function Chatbot() {
   const [open, setOpen] = useState(false);
+  const [greeting, setGreeting] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([
-    { role: "assistant", content: "Hello — I'm Hamza assistant. Ask me about web development services, projects, or contact details." },
+    { role: "assistant", content: "yo! 👋 ask me anything — skills, projects, pricing, whatever. i got u." },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -25,6 +26,11 @@ export function Chatbot() {
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, loading]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setGreeting(true), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   async function send(text: string) {
     const trimmed = text.trim();
@@ -45,9 +51,28 @@ export function Chatbot() {
 
   return (
     <>
+      {/* Greeting bubble */}
+      {greeting && !open && (
+        <div className="fixed bottom-24 right-5 z-50 flex items-start gap-2 animate-in fade-in slide-in-from-bottom-2 duration-300">
+          <div
+            className="relative bg-white border-2 border-ink rounded-2xl rounded-br-sm px-4 py-3 max-w-[220px] shadow-[4px_4px_0_0_var(--ink)] cursor-pointer"
+            onClick={() => { setGreeting(false); setOpen(true); }}
+          >
+            <p className="text-sm font-mono leading-snug">yo! 👋 need a website? ask me anything</p>
+          </div>
+          <button
+            onClick={(e) => { e.stopPropagation(); setGreeting(false); }}
+            className="shrink-0 mt-0.5 grid place-items-center w-6 h-6 rounded-full bg-ink/80 text-white hover:bg-ink transition-colors"
+            aria-label="dismiss greeting"
+          >
+            <X className="w-3 h-3" />
+          </button>
+        </div>
+      )}
+
       {/* Floating button */}
       <button
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => { setOpen((v) => !v); setGreeting(false); }}
         type="button"
         aria-label={open ? "close chat" : "open chat"}
         title="Hamza assistant"

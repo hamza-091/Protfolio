@@ -6,7 +6,7 @@ export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
       { title: "Work — Hamza Mehmood" },
-      { name: "description", content: "Hamza Mehmood's work includes six polished landing pages plus miscellaneous projects such as a final-year voice agent, SmartPOS, and stock prediction." },
+      { name: "description", content: "Hamza Mehmood's work includes six polished landing pages plus miscellaneous projects such as a capstone voice agent, SmartPOS, and stock prediction." },
       { property: "og:title", content: "Work — Hamza Mehmood" },
       { property: "og:description", content: "Web development work by Hamza Mehmood, including landing pages and miscellaneous projects." },
     ],

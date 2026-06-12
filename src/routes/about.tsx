@@ -7,7 +7,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Hamza Mehmood" },
-      { name: "description", content: "Hamza Mehmood is a final-year Computer Science student and web developer focused on clean, production-ready interfaces and practical integrations." },
+      { name: "description", content: "Hamza Mehmood is a fresh Computer Science graduate and web developer focused on clean, production-ready interfaces and practical integrations." },
       { property: "og:title", content: "About — Hamza Mehmood" },
       { property: "og:description", content: "Web developer focused on clean, production-ready interfaces." },
     ],
@@ -23,7 +23,7 @@ const SKILLS = [
 ];
 
 const TIMELINE = [
-  { year: "2025–26", title: "Almas — Voice Calling Agent", where: "Final Year Project", body: "24/7 inbound calling system for healthcare built with Twilio, OpenAI GPT-4 and Next.js. Dual-layer emergency detection resolved 6/6 test scenarios. Includes an admin dashboard with live transcripts and flags." },
+  { year: "2025–26", title: "Almas — Voice Calling Agent", where: "Capstone Project", body: "24/7 inbound calling system for healthcare built with Twilio, OpenAI GPT-4 and Next.js. Dual-layer emergency detection resolved 6/6 test scenarios. Includes an admin dashboard with live transcripts and flags." },
   { year: "2025", title: "E-Commerce Listing Intern", where: "GE Solucions", body: "Optimized over 100 product listings, supported inventory tracking, and improved store-level performance metrics." },
   { year: "2025", title: "WordPress Developer", where: "Fiverr · MichaelThal.com", body: "Delivered a fully responsive, SEO-optimized site for a professional author using the Blocksy theme. Managed client communication and delivery end-to-end." },
   { year: "2024–25", title: "Amazon UK Retail Arbitrage", where: "Virtual Assistant", body: "Sourced and managed inventory on Amazon UK using Keepa and Helium 10, achieving up to 20% ROI." },
@@ -49,8 +49,8 @@ function About() {
           <div className="mt-10 space-y-2 font-mono text-sm">
             <p><span className="text-muted-foreground">Name</span> → {HAMZA.name}</p>
             <p><span className="text-muted-foreground">Role</span> → {HAMZA.role}</p>
-            <p><span className="text-muted-foreground">Education</span> → BSc Computer Science</p>
-            <p><span className="text-muted-foreground">Graduating</span> → June 2026</p>
+            <p><span className="text-muted-foreground">Education</span> → BSc Computer Science (2026)</p>
+            <p><span className="text-muted-foreground">Status</span> → Fresh Graduate</p>
             <p><span className="text-muted-foreground">CGPA</span> → 3.0</p>
           </div>
         </div>
@@ -62,10 +62,10 @@ function About() {
           </h1>
           <div className="mt-6 space-y-4 text-lg leading-relaxed">
             <p>
-              I'm Hamza — a web developer and final-year Computer Science student graduating in June 2026. I design and build web applications, marketing sites, and the integrations that make them work in production.
+              I'm Hamza — a web developer and fresh Computer Science graduate. I design and build web applications, marketing sites, and the integrations that make them work in production.
             </p>
             <p>
-              My final-year project, <span className="font-semibold">Almas</span>, is a 24/7 voice calling agent for healthcare built with Twilio, GPT-4 and Next.js, featuring a dual-layer emergency detection system that resolved 6/6 test scenarios.
+              My capstone project, <span className="font-semibold">Almas</span>, is a 24/7 voice calling agent for healthcare built with Twilio, GPT-4 and Next.js, featuring a dual-layer emergency detection system that resolved 6/6 test scenarios.
             </p>
             <p>
               Outside coursework I've delivered WordPress sites for paying clients, run an Amazon UK arbitrage operation at up to 20% ROI, and built a series of personal projects, including six professional landing pages and a handful of utility builds.

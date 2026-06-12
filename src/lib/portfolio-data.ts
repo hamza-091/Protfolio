@@ -99,7 +99,7 @@ export const PROJECTS: Project[] = [
 export const MISC_PROJECTS: MiscProject[] = [
   {
     title: "Almas — Voice Calling Agent",
-    where: "Final Year Project",
+    where: "Capstone Project",
     year: "2025–26",
     blurb: "A 24/7 healthcare calling agent built with Twilio, GPT-4, Next.js, MongoDB, and Node.js. It includes dual-layer emergency detection, live call logs, transcripts, and an admin dashboard.",
     stack: ["Twilio", "OpenAI", "Next.js", "MongoDB", "Node.js"],
@@ -139,7 +139,7 @@ Name: Hamza Mehmood
 Role: Web Developer
 Email: hamzamehmood054@gmail.com  |  WhatsApp: +92 311 2823179
 LinkedIn: https://www.linkedin.com/in/hamzamehmoodd/
-Background: Final-year Computer Science student (BSc), graduating June 2026, CGPA 3.0.
+Background: Fresh Computer Science graduate (BSc), Bahria University, Class of 2026, CGPA 3.0.
 Focus: building production-ready web applications, thoughtful frontends, and practical
 automations for real businesses.
 
@@ -156,13 +156,13 @@ automations for real businesses.
 - Virtual Assistant, Amazon UK retail arbitrage (Oct 2024–Jan 2025): sourced and managed inventory using Keepa and Helium 10, achieving up to 20% ROI.
 
 == PROJECTS ==
-1. Final-year project: Almas — Voice Calling Agent (2025–26). Stack: Twilio, OpenAI GPT-4, Next.js 14, MongoDB, Tailwind, Node.js. Handles 24/7 inbound healthcare calls with dual-layer emergency detection and an admin dashboard for logs and transcripts.
+1. Capstone project: Almas — Voice Calling Agent (2025–26). Stack: Twilio, OpenAI GPT-4, Next.js 14, MongoDB, Tailwind, Node.js. Handles 24/7 inbound healthcare calls with dual-layer emergency detection and an admin dashboard for logs and transcripts.
 2. Personal project: SmartPOS (2024). React + Node + MySQL. Real-time billing, inventory management, and product modules.
 3. Personal project: Stock Price Prediction (2024). Python with scikit-learn, Pandas, and Matplotlib. Supervised ML pipeline on live data feeds.
 4. Client landing pages (6): Scriptly, Elara Residences, Ember Saffron, Apex Athletic, Aven, and ElevateU. These are polished landing-page builds for writing, real estate, dining, fitness, fashion, and education brands.
 
 == EDUCATION ==
-- BSc Computer Science, Bahria University, Oct 2022 – June 2026. CGPA 3.0.
+- BSc Computer Science, Bahria University, Oct 2022 – 2026. CGPA 3.0.
   Coursework: Data Structures, OOP, DBMS, Web Engineering, Machine Learning, Software Quality Assurance.
 - Pre-Engineering, Cadet College Petaro, 2016–2021, 88%.
 
@@ -174,4 +174,22 @@ automations for real businesses.
 == CONTACT ==
 Focused on web development, frontend roles, and automation/integration projects.
 Preferred contact: hamzamehmood054@gmail.com or WhatsApp at +92 311 2823179.
+
+== SERVICES & PRICING ==
+Hamza offers the following web development services at rates well below the usual market average:
+- Landing Pages: $150–$400 USD (3–5 days)
+- Business / Brand Websites (multi-page, responsive, SEO-optimized): $400–$900 USD (1–2 weeks)
+- Web Applications (custom features, admin panels, integrations): $1,000–$2,500+ USD (2–4 weeks)
+- WordPress Sites: Starting from $150 USD
+- E-commerce Websites (Shopify, WooCommerce, or custom): $300–$1,200 USD depending on complexity
+- API Integrations & Automations: Custom pricing based on scope
+- Portfolio Websites: $150–$350 USD
+Payment: Milestone-based preferred.
+Turnaround: Depends on project scope — typically 3–5 days for landing pages, 1–2 weeks for multi-page sites, 2–4 weeks for full web apps.
+Hamza's pricing is intentionally kept well below market rates to stay competitive — without cutting corners on quality.
+
+== NICHE EXPERTISE ==
+Hamza can build websites for any niche including but not limited to:
+- Restaurants & cafes, Real estate, Gyms & fitness, Fashion & e-commerce, Education & e-learning, Healthcare, Travel agencies, SaaS products, Personal brands & portfolios, Agencies, Startups.
+Each project includes responsive design, SEO basics, contact forms, and performance optimization.
 `.trim();
