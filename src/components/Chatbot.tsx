@@ -25,11 +25,10 @@ export function Chatbot() {
   const [loading, setLoading] = useState(false);
   const ask = useServerFn(askHamzaBot);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    requestAnimationFrame(() => {
-      scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
-    });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
 
   useEffect(() => {
@@ -139,6 +138,7 @@ export function Chatbot() {
               </div>
             </div>
           )}
+          <div ref={messagesEndRef} />
         </div>
 
         {messages.length <= 1 && (

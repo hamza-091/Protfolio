@@ -142,7 +142,7 @@ function RootShell({ children }: { children: ReactNode }) {
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: "document.getElementById('google-fonts').media='all';",
+            __html: "requestAnimationFrame(function() { document.getElementById('google-fonts').media='all'; });",
           }}
         />
         <script
