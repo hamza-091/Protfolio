@@ -24,6 +24,21 @@ export type MiscProject = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: "michaelthal",
+    title: "Michael Thal",
+    tag: "Author website",
+    blurb:
+      "Fully responsive WordPress build for an award-winning Young Adult novelist. Features a custom layout, SEO optimization, and end-to-end client management.",
+    challengeSolution:
+      "Challenge: The author needed a responsive, custom platform to showcase his novels and publish blogs. Solution: Built a fully optimized WordPress site using the Blocksy theme, integrating custom layouts and SEO best practices for organic reach.",
+    url: "https://michaelthal.com/",
+    image: "/images/screencapture-michael-thal.webp",
+    accent: "lime",
+    rotate: "rotate-1",
+    year: "2025",
+    stack: ["WordPress", "Blocksy", "SEO"],
+  },
+  {
     slug: "scriptly",
     title: "Scriptly",
     tag: "Writing platform",
@@ -185,11 +200,12 @@ automations for real businesses.
 - WordPress Developer, Fiverr / MichaelThal.com (Jan–May 2025): delivered a responsive, SEO-optimized author website using the Blocksy theme.
 
 == PROJECTS ==
-1. Capstone project: Almas — Voice Calling Agent (2025–26). Stack: Twilio, OpenAI GPT-4, Next.js 14, MongoDB, Tailwind, Node.js. Handles 24/7 inbound healthcare calls with dual-layer emergency detection and an admin dashboard for logs and transcripts.
-2. Personal project: Shrinkr — URL Shortener (2024). React + Node + Express + MongoDB + JWT. Full-stack URL shortener with analytics and JWT auth.
-3. Personal project: SmartPOS (2024). React + Node + MySQL. Real-time billing, inventory management, and product modules.
-4. Personal project: Stock Price Prediction (2024). Python with scikit-learn, Pandas, and Matplotlib. Supervised ML pipeline on live data feeds.
-5. Client landing pages (6): Scriptly, Elara Residences, Ember Saffron, Apex Athletic, Aven, and ElevateU. These are polished landing-page builds for writing, real estate, dining, fitness, fashion, and education brands.
+1. Client project: MichaelThal.com (2025). Fully responsive WordPress build with custom layout, SEO optimization, and end-to-end client management.
+2. Capstone project: Almas — Voice Calling Agent (2025–26). Stack: Twilio, OpenAI GPT-4, Next.js 14, MongoDB, Tailwind, Node.js. Handles 24/7 inbound healthcare calls with dual-layer emergency detection and an admin dashboard for logs and transcripts.
+3. Personal project: Shrinkr — URL Shortener (2024). React + Node + Express + MongoDB + JWT. Full-stack URL shortener with analytics and JWT auth.
+4. Personal project: SmartPOS (2024). React + Node + MySQL. Real-time billing, inventory management, and product modules.
+5. Personal project: Stock Price Prediction (2024). Python with scikit-learn, Pandas, and Matplotlib. Supervised ML pipeline on live data feeds.
+6. Client landing pages (6): Scriptly, Elara Residences, Ember Saffron, Apex Athletic, Aven, and ElevateU. These are polished landing-page builds for writing, real estate, dining, fitness, fashion, and education brands.
 
 == EDUCATION ==
 - BSc Computer Science, Bahria University, Oct 2022 – 2026.

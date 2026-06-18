@@ -45,6 +45,12 @@ const SKILLS = [
 
 const TIMELINE = [
   {
+    year: "2025",
+    title: "WordPress Developer",
+    where: "Fiverr · MichaelThal.com",
+    body: "Designed and developed a fully responsive, SEO-optimized personal website for award-winning YA novelist Michael Thal using WordPress and the Blocksy theme. Managed all communication and client delivery end-to-end.",
+  },
+  {
     year: "2025–26",
     title: "Almas — Voice Calling Agent",
     where: "Capstone Project",
@@ -55,12 +61,6 @@ const TIMELINE = [
     title: "Data Science Intern",
     where: "Internship · UNITZERO (Pvt) Limited",
     body: "Completed a data science internship focusing on real-world data pipelines, analysis workflows, and ML model development. Gained hands-on experience with Python, data preprocessing, and applied AI techniques in a professional environment.",
-  },
-  {
-    year: "2025",
-    title: "WordPress Developer",
-    where: "Fiverr · MichaelThal.com",
-    body: "Delivered a fully responsive, SEO-optimized site for a professional author using the Blocksy theme. Managed client communication and delivery end-to-end.",
   },
   {
     year: "2024",
