@@ -43,7 +43,12 @@ export function Chatbot() {
       const { reply } = await ask({ data: { messages: next.slice(-15) } });
       setMessages((m) => [...m, { role: "assistant", content: reply }]);
     } catch (e) {
-      setMessages((m) => [...m, { role: "assistant", content: "Sorry — a network hiccup. Please try again." }]);
+      console.error("Chatbot query failed:", e);
+      const errMsg = e instanceof Error ? e.message : String(e);
+      setMessages((m) => [
+        ...m,
+        { role: "assistant", content: `Sorry — a network hiccup: ${errMsg}. Please try again.` }
+      ]);
     } finally {
       setLoading(false);
     }
@@ -148,11 +153,13 @@ export function Chatbot() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask a question…"
+            aria-label="Ask a question about Hamza"
             className="flex-1 min-w-0 px-3 py-2 text-sm bg-cream border-2 border-ink rounded-md focus:outline-none focus:ring-2 focus:ring-electric font-mono"
           />
           <button
             type="submit"
             disabled={loading || !input.trim()}
+            aria-label="Send question"
             className="grid place-items-center w-10 h-10 bg-ink text-cream rounded-md brutal-hover disabled:opacity-50"
           >
             <Send className="w-4 h-4" />

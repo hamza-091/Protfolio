@@ -2,16 +2,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PROJECTS, HAMZA } from "@/lib/portfolio-data";
 import { ProjectCard } from "@/components/ProjectCard";
 // Use local image from the project's images folder
-const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.png";
+const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.webp";
 import { ArrowRight, Star, MessageCircle } from "lucide-react";
 import { Marquee } from "@/components/Marquee";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Hamza Mehmood — Web Developer" },
       { name: "description", content: "Hamza Mehmood builds sharp, scroll-stopping websites with a clean, modern edge." },
     ],
+    links: [
+      { rel: "canonical", href: "https://protfolio-ebon-two.vercel.app/" },
+    ],
+    title: "Hamza Mehmood — Web Developer",
   }),
   component: Home,
 });

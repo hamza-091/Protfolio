@@ -1,17 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 // Use local image from /images folder
-const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.png";
+const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.webp";
 import { HAMZA } from "@/lib/portfolio-data";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Hamza Mehmood" },
       { name: "description", content: "Hamza Mehmood is a fresh Computer Science graduate and web developer focused on clean, production-ready interfaces and practical integrations." },
       { property: "og:title", content: "About — Hamza Mehmood" },
       { property: "og:description", content: "Web developer focused on clean, production-ready interfaces." },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://protfolio-ebon-two.vercel.app/about" }],
+    title: "About — Hamza Mehmood",
   }),
   component: About,
 });

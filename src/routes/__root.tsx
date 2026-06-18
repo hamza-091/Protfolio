@@ -81,7 +81,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Hamza Mehmood — Web Developer" },
       { name: "description", content: "Hamza Mehmood is a web developer building clean, modern websites and practical digital experiences." },
       { name: "author", content: "Hamza Mehmood" },
       { property: "og:title", content: "Hamza Mehmood — Web Developer" },
@@ -95,6 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" },
     ],
+    title: "Hamza Mehmood — Web Developer",
   }),
   shellComponent: RootShell,
   component: RootComponent,

@@ -140,6 +140,8 @@ export const askHamzaBot = createServerFn({ method: "POST" })
       }
     }
 
+    const errors: string[] = [];
+
     if (geminiKey) {
       try {
         const modelList = process.env.GEMINI_MODEL_LIST
@@ -161,97 +163,85 @@ export const askHamzaBot = createServerFn({ method: "POST" })
         }));
 
         let lastErr: { status: number; body: string } | null = null;
+        let success = false;
+        let reply = "";
 
         for (const model of modelList) {
           const urlBase = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
           const url = `${urlBase}?key=${encodeURIComponent(geminiKey)}`;
 
-          const res = await fetchWithRetry(url, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              contents: [...baseContents, ...historyContents],
-            }),
-          });
+          try {
+            const res = await fetchWithRetry(url, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                contents: [...baseContents, ...historyContents],
+              }),
+            });
 
-          if (!res.ok) {
-            const body = await res.text().catch(() => "");
-            console.error("Gemini error", res.status, body);
-            lastErr = { status: res.status, body };
-
-            if (res.status === 429 || res.status === 503 || res.status === 404) {
+            if (!res.ok) {
+              const body = await res.text().catch(() => "");
+              console.error("Gemini error", res.status, body);
+              lastErr = { status: res.status, body };
               continue;
             }
 
-            if (res.status === 401 || res.status === 403) {
-              return {
-                reply: "invalid Gemini credentials — please check your GEMINI_API_KEY",
-              };
-            }
-
-            return { reply: "brain glitch. try again?" };
+            const json = await res.json().catch(() => ({}));
+            reply =
+              json?.candidates?.[0]?.content?.parts?.[0]?.text ||
+              json?.candidates?.[0]?.content?.parts
+                ?.map((part: { text?: string }) => part.text)
+                .join("") ||
+              json?.output?.[0]?.content?.text ||
+              (typeof json === "string" ? json : JSON.stringify(json).slice(0, 1000));
+            success = true;
+            break;
+          } catch (fetchErr) {
+            console.error(`Gemini fetch failed for model ${model}:`, fetchErr);
+            lastErr = { status: 0, body: fetchErr instanceof Error ? fetchErr.message : String(fetchErr) };
           }
+        }
 
-          const json = await res.json().catch(() => ({}));
-          const reply =
-            json?.candidates?.[0]?.content?.parts?.[0]?.text ||
-            json?.candidates?.[0]?.content?.parts
-              ?.map((part: { text?: string }) => part.text)
-              .join("") ||
-            json?.output?.[0]?.content?.text ||
-            (typeof json === "string" ? json : JSON.stringify(json).slice(0, 1000));
-
+        if (success) {
           return { reply: reply ?? "..." };
+        } else {
+          errors.push(`Gemini failed (last status: ${lastErr?.status}, body: ${lastErr?.body})`);
         }
-
-        console.error("All Gemini models failed", lastErr);
-        if (lastErr?.status === 503) {
-          return { reply: "Model is busy right now — try again in a few seconds 🥲" };
-        }
-        if (lastErr?.status === 404) {
-          return {
-            reply:
-              "Gemini model not found (404). Please set `GEMINI_MODEL` in your .env to a valid model name",
-          };
-        }
-
-        return { reply: "network issue contacting Gemini. try again later." };
       } catch (error) {
         console.error("Gemini request failed", error);
-        return { reply: "network issue contacting Gemini. try again later." };
+        errors.push(`Gemini request failed: ${error instanceof Error ? error.message : String(error)}`);
       }
     }
 
     if (lovableKey) {
-      const res = await fetchWithRetry("https://ai.gateway.lovable.dev/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${lovableKey}`,
-        },
-        body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
-          messages: [{ role: "system", content: activePrompt }, ...data.messages],
-        }),
-      });
+      try {
+        const res = await fetchWithRetry("https://ai.gateway.lovable.dev/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${lovableKey}`,
+          },
+          body: JSON.stringify({
+            model: "google/gemini-2.5-flash",
+            messages: [{ role: "system", content: activePrompt }, ...data.messages],
+          }),
+        });
 
-      if (!res.ok) {
-        const body = await res.text().catch(() => "");
-        console.error("AI gateway error", res.status, body);
-        if (res.status === 429) {
-          return { reply: "whoa, too many messages too fast. try again in a sec 🥲" };
+        if (res.ok) {
+          const json = await res.json();
+          const reply: string = json?.choices?.[0]?.message?.content ?? "...";
+          return { reply };
+        } else {
+          const body = await res.text().catch(() => "");
+          console.error("AI gateway error", res.status, body);
+          errors.push(`Lovable AI Gateway failed (status: ${res.status}, body: ${body})`);
         }
-        if (res.status === 402) {
-          return { reply: "ai credits ran out — ping hamza at hamzamehmood054@gmail.com 📧" };
-        }
-        return { reply: "brain glitch. try again?" };
+      } catch (error) {
+        console.error("Lovable AI Gateway request failed", error);
+        errors.push(`Lovable request failed: ${error instanceof Error ? error.message : String(error)}`);
       }
-
-      const json = await res.json();
-      const reply: string = json?.choices?.[0]?.message?.content ?? "...";
-      return { reply };
     }
 
     if (openaiKey) {
@@ -269,25 +259,25 @@ export const askHamzaBot = createServerFn({ method: "POST" })
           }),
         });
 
-        if (!res.ok) {
+        if (res.ok) {
+          const json = await res.json();
+          const reply: string = json?.choices?.[0]?.message?.content ?? "...";
+          return { reply };
+        } else {
           const body = await res.text().catch(() => "");
           console.error("OpenAI error", res.status, body);
-          if (res.status === 429) {
-            return { reply: "whoa, too many messages too fast. try again in a sec 🥲" };
-          }
-          if (res.status === 401) {
-            return { reply: "invalid OpenAI API key — please check your environment variable" };
-          }
-          return { reply: "brain glitch. try again?" };
+          errors.push(`OpenAI failed (status: ${res.status}, body: ${body})`);
         }
-
-        const json = await res.json();
-        const reply: string = json?.choices?.[0]?.message?.content ?? "...";
-        return { reply };
       } catch (error) {
         console.error("OpenAI request failed", error);
-        return { reply: "network issue contacting OpenAI. try again later." };
+        errors.push(`OpenAI request failed: ${error instanceof Error ? error.message : String(error)}`);
       }
+    }
+
+    if (errors.length > 0) {
+      return {
+        reply: `Sorry, all configured AI providers failed. Errors:\n- ${errors.join('\n- ')}`
+      };
     }
 
     return {
