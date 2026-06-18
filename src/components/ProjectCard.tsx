@@ -30,6 +30,8 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           src={project.image}
           alt={project.title}
           loading="lazy"
+          width={400}
+          height={500}
           className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />

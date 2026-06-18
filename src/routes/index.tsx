@@ -70,7 +70,14 @@ function Home() {
               <div className="absolute inset-0 bg-electric rounded-3xl rotate-6" />
               <div className="absolute inset-0 bg-lime rounded-3xl -rotate-3" />
                 <div className="relative brutal-lg rounded-3xl overflow-hidden -rotate-1 bg-card">
-                <img src={hamzaImgPath} alt="Hamza Mehmood" className="w-full h-full object-cover" />
+                <img
+                  src={hamzaImgPath}
+                  alt="Hamza Mehmood"
+                  width={416}
+                  height={416}
+                  fetchPriority="high"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute -top-4 -right-3 bg-pink text-white font-mono text-xs px-2 py-1 brutal-sm rounded-md rotate-12">
                 Hello
