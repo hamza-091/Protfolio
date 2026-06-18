@@ -16,19 +16,23 @@ export function Nav() {
           <span className="grid place-items-center w-9 h-9 bg-lime brutal-sm rounded-md">
             <Sparkles className="w-4 h-4" />
           </span>
-          <span className="font-display text-xl tracking-tight">Hamza<span className="text-pink">.</span></span>
+          <span className="font-display text-xl tracking-tight">
+            Hamza<span className="text-pink">.</span>
+          </span>
         </Link>
-        <nav className="flex items-center gap-1 sm:gap-2">
-          {links.filter((l) => l.label !== "Contact").map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className="px-3 py-1.5 text-sm font-mono rounded-md hover:bg-lime transition-colors data-[status=active]:bg-ink data-[status=active]:text-cream"
-              activeOptions={{ exact: true }}
-            >
-              {l.label}
-            </Link>
-          ))}
+        <nav className="flex items-center gap-2">
+          {links
+            .filter((l) => l.label !== "Contact")
+            .map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                className="px-4 py-3 text-base sm:px-3 sm:py-1.5 sm:text-sm font-mono rounded-md hover:bg-lime transition-colors data-[status=active]:bg-ink data-[status=active]:text-cream"
+                activeOptions={{ exact: true }}
+              >
+                {l.label}
+              </Link>
+            ))}
           <Link
             to="/contact"
             className="ml-1 hidden sm:inline-flex px-3 py-1.5 text-sm font-mono bg-pink text-white brutal-sm brutal-hover rounded-md"

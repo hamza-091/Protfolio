@@ -26,7 +26,8 @@ export const PROJECTS: Project[] = [
     slug: "scriptly",
     title: "Scriptly",
     tag: "Writing platform",
-    blurb: "A focused, modern editor designed for writers who care about polish — clean typography, distraction-free flow, and an interface that gets out of the way.",
+    blurb:
+      "A focused, modern editor designed for writers who care about polish — clean typography, distraction-free flow, and an interface that gets out of the way.",
     url: "https://scriptly-shine.lovable.app/",
     image: "/images/screencapture-scriptly-shine-lovable-app-2026-06-04-17_02_05.webp",
     accent: "electric",
@@ -38,7 +39,8 @@ export const PROJECTS: Project[] = [
     slug: "elara",
     title: "Elara Residences",
     tag: "Luxury real estate",
-    blurb: "An editorial brand site for a premium residential development. Dark navy palette, gold accents, refined motion, and a measured, confident voice throughout.",
+    blurb:
+      "An editorial brand site for a premium residential development. Dark navy palette, gold accents, refined motion, and a measured, confident voice throughout.",
     url: "https://elara-residences.lovable.app/",
     image: "/images/screencapture-elara-residences-lovable-app-2026-06-04-17_02_32.webp",
     accent: "cream",
@@ -50,7 +52,8 @@ export const PROJECTS: Project[] = [
     slug: "ember",
     title: "Ember Saffron",
     tag: "Fine dining",
-    blurb: "Moody, atmospheric site for a fine-dining restaurant — full reservation flow, signature menu, and chef-led storytelling delivered with a cinematic finish.",
+    blurb:
+      "Moody, atmospheric site for a fine-dining restaurant — full reservation flow, signature menu, and chef-led storytelling delivered with a cinematic finish.",
     url: "https://ember-saffron.lovable.app/",
     image: "/images/screencapture-ember-saffron-lovable-app-2026-06-04-17_03_25.webp",
     accent: "pink",
@@ -62,7 +65,8 @@ export const PROJECTS: Project[] = [
     slug: "apex",
     title: "Apex Athletic",
     tag: "Performance gym",
-    blurb: "A high-energy brand site for a performance gym — coaches, plans, transformations, and a mobile-app pitch packaged with bold visual rhythm.",
+    blurb:
+      "A high-energy brand site for a performance gym — coaches, plans, transformations, and a mobile-app pitch packaged with bold visual rhythm.",
     url: "https://apex-athletic-spark.lovable.app/",
     image: "/images/screencapture-apex-athletic-spark-lovable-app-2026-06-04-17_04_05.webp",
     accent: "lime",
@@ -74,7 +78,8 @@ export const PROJECTS: Project[] = [
     slug: "aven",
     title: "Aven",
     tag: "Fashion storefront",
-    blurb: "A quiet, soft-neutral storefront for a Scandinavian-inspired label — bestsellers, monochrome edits, fit guides, and a checkout that feels effortless.",
+    blurb:
+      "A quiet, soft-neutral storefront for a Scandinavian-inspired label — bestsellers, monochrome edits, fit guides, and a checkout that feels effortless.",
     url: "https://scandi-chic-aven.lovable.app/",
     image: "/images/screencapture-scandi-chic-aven-lovable-app-2026-06-04-17_04_41.webp",
     accent: "cream",
@@ -86,7 +91,8 @@ export const PROJECTS: Project[] = [
     slug: "elevateu",
     title: "ElevateU",
     tag: "Education platform",
-    blurb: "An online learning marketplace with course discovery, instructor pages, pricing tiers, certificates, and a polished mobile pitch.",
+    blurb:
+      "An online learning marketplace with course discovery, instructor pages, pricing tiers, certificates, and a polished mobile pitch.",
     url: "https://elevate-your-skill-73.lovable.app/",
     image: "/images/screencapture-elevate-your-skill-73-lovable-app-2026-06-04-17_05_36.webp",
     accent: "electric",
@@ -101,21 +107,24 @@ export const MISC_PROJECTS: MiscProject[] = [
     title: "Almas — Voice Calling Agent",
     where: "Capstone Project",
     year: "2025–26",
-    blurb: "A 24/7 healthcare calling agent built with Twilio, GPT-4, Next.js, MongoDB, and Node.js. It includes dual-layer emergency detection, live call logs, transcripts, and an admin dashboard.",
+    blurb:
+      "A 24/7 healthcare calling agent built with Twilio, GPT-4, Next.js, MongoDB, and Node.js. It includes dual-layer emergency detection, live call logs, transcripts, and an admin dashboard.",
     stack: ["Twilio", "OpenAI", "Next.js", "MongoDB", "Node.js"],
   },
   {
     title: "SmartPOS",
     where: "Personal project",
     year: "2024",
-    blurb: "A point-of-sale system with real-time billing, inventory tracking, and product management features designed for practical day-to-day operations.",
+    blurb:
+      "A point-of-sale system with real-time billing, inventory tracking, and product management features designed for practical day-to-day operations.",
     stack: ["React", "Node.js", "MySQL"],
   },
   {
     title: "Stock Price Prediction",
     where: "Personal project",
     year: "2024",
-    blurb: "A machine-learning project that forecasts stock movement from live data feeds using scikit-learn, Pandas, and Matplotlib.",
+    blurb:
+      "A machine-learning project that forecasts stock movement from live data feeds using scikit-learn, Pandas, and Matplotlib.",
     stack: ["Python", "scikit-learn", "Pandas"],
   },
 ];

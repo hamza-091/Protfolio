@@ -14,7 +14,9 @@ import { HAMZA } from "@/lib/portfolio-data";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
-import { Chatbot } from "../components/Chatbot";
+import { lazy, Suspense } from "react";
+
+const Chatbot = lazy(() => import("../components/Chatbot").then((m) => ({ default: m.Chatbot })));
 
 function NotFoundComponent() {
   return (
@@ -81,10 +83,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "description", content: "Hamza Mehmood is a web developer building clean, modern websites and practical digital experiences." },
+      {
+        name: "description",
+        content:
+          "Hamza Mehmood is a web developer building clean, modern websites and practical digital experiences.",
+      },
       { name: "author", content: "Hamza Mehmood" },
       { property: "og:title", content: "Hamza Mehmood — Web Developer" },
-      { property: "og:description", content: "Web developer building clean, modern websites and practical digital experiences." },
+      {
+        property: "og:description",
+        content: "Web developer building clean, modern websites and practical digital experiences.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -92,7 +101,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+        media: "print",
+        onLoad: "this.media='all'",
+      },
     ],
     title: "Hamza Mehmood — Web Developer",
   }),
@@ -108,25 +122,28 @@ function RootShell({ children }: { children: ReactNode }) {
     "@graph": [
       {
         "@type": "Person",
-        "name": HAMZA.name,
-        "url": "/",
-        "jobTitle": HAMZA.role,
-        "email": `mailto:${HAMZA.email}`,
-        "sameAs": [HAMZA.linkedin]
+        name: HAMZA.name,
+        url: "/",
+        jobTitle: HAMZA.role,
+        email: `mailto:${HAMZA.email}`,
+        sameAs: [HAMZA.linkedin],
       },
       {
         "@type": "WebSite",
-        "name": `${HAMZA.name} — Portfolio`,
-        "url": "/"
-      }
-    ]
+        name: `${HAMZA.name} — Portfolio`,
+        url: "/",
+      },
+    ],
   };
 
   return (
     <html lang="en">
       <head>
         <HeadContent />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
       </head>
       <body>
         {children}
@@ -146,7 +163,9 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
-      <Chatbot />
+      <Suspense fallback={null}>
+        <Chatbot />
+      </Suspense>
     </QueryClientProvider>
   );
 }

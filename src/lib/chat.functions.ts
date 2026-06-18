@@ -200,7 +200,10 @@ export const askHamzaBot = createServerFn({ method: "POST" })
             break;
           } catch (fetchErr) {
             console.error(`Gemini fetch failed for model ${model}:`, fetchErr);
-            lastErr = { status: 0, body: fetchErr instanceof Error ? fetchErr.message : String(fetchErr) };
+            lastErr = {
+              status: 0,
+              body: fetchErr instanceof Error ? fetchErr.message : String(fetchErr),
+            };
           }
         }
 
@@ -211,7 +214,9 @@ export const askHamzaBot = createServerFn({ method: "POST" })
         }
       } catch (error) {
         console.error("Gemini request failed", error);
-        errors.push(`Gemini request failed: ${error instanceof Error ? error.message : String(error)}`);
+        errors.push(
+          `Gemini request failed: ${error instanceof Error ? error.message : String(error)}`,
+        );
       }
     }
 
@@ -240,7 +245,9 @@ export const askHamzaBot = createServerFn({ method: "POST" })
         }
       } catch (error) {
         console.error("Lovable AI Gateway request failed", error);
-        errors.push(`Lovable request failed: ${error instanceof Error ? error.message : String(error)}`);
+        errors.push(
+          `Lovable request failed: ${error instanceof Error ? error.message : String(error)}`,
+        );
       }
     }
 
@@ -270,13 +277,15 @@ export const askHamzaBot = createServerFn({ method: "POST" })
         }
       } catch (error) {
         console.error("OpenAI request failed", error);
-        errors.push(`OpenAI request failed: ${error instanceof Error ? error.message : String(error)}`);
+        errors.push(
+          `OpenAI request failed: ${error instanceof Error ? error.message : String(error)}`,
+        );
       }
     }
 
     if (errors.length > 0) {
       return {
-        reply: `Sorry, all configured AI providers failed. Errors:\n- ${errors.join('\n- ')}`
+        reply: `Sorry, all configured AI providers failed. Errors:\n- ${errors.join("\n- ")}`,
       };
     }
 

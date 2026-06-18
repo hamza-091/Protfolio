@@ -17,15 +17,15 @@ const BUDGET_FALLBACK =
   "Hamza's rates are well below market: about $150-$400 for a simple one-page site, $400-$900 for a professional multi-page website with booking inquiry and lead forms, and $1,000+ for a custom web app with search, filters, admin tools, and advanced integrations. Final price depends on pages, design, features, and integrations.";
 
 // Load FAQ data
-const faqData = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "data", "faq_data.json"), "utf-8")
-);
+const faqData = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "faq_data.json"), "utf-8"));
 
 let extractor;
 let faqEmbeddings = [];
 
 function cosineSimilarity(a, b) {
-  let dot = 0, normA = 0, normB = 0;
+  let dot = 0,
+    normA = 0,
+    normB = 0;
   for (let i = 0; i < a.length; i++) {
     dot += a[i] * b[i];
     normA += a[i] * a[i];
@@ -59,7 +59,15 @@ app.post("/api/chat", async (req, res) => {
     }
 
     const normalizedMessage = message.toLowerCase();
-    const budgetKeywords = ["budget", "cost", "price", "usd", "travel agency", "travel website", "website cost"];
+    const budgetKeywords = [
+      "budget",
+      "cost",
+      "price",
+      "usd",
+      "travel agency",
+      "travel website",
+      "website cost",
+    ];
 
     if (budgetKeywords.some((keyword) => normalizedMessage.includes(keyword))) {
       return res.json({

@@ -16,7 +16,10 @@ export function Chatbot() {
   const [open, setOpen] = useState(false);
   const [greeting, setGreeting] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([
-    { role: "assistant", content: "yo! 👋 ask me anything — skills, projects, pricing, whatever. i got u." },
+    {
+      role: "assistant",
+      content: "yo! 👋 ask me anything — skills, projects, pricing, whatever. i got u.",
+    },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -47,7 +50,7 @@ export function Chatbot() {
       const errMsg = e instanceof Error ? e.message : String(e);
       setMessages((m) => [
         ...m,
-        { role: "assistant", content: `Sorry — a network hiccup: ${errMsg}. Please try again.` }
+        { role: "assistant", content: `Sorry — a network hiccup: ${errMsg}. Please try again.` },
       ]);
     } finally {
       setLoading(false);
@@ -61,33 +64,38 @@ export function Chatbot() {
         <div className="fixed bottom-24 right-5 z-50 flex items-start gap-2 animate-in fade-in slide-in-from-bottom-2 duration-300">
           <div
             className="relative bg-white border-2 border-ink rounded-2xl rounded-br-sm px-4 py-3 max-w-[220px] shadow-[4px_4px_0_0_var(--ink)] cursor-pointer"
-            onClick={() => { setGreeting(false); setOpen(true); }}
+            onClick={() => {
+              setGreeting(false);
+              setOpen(true);
+            }}
           >
             <p className="text-sm font-mono leading-snug">yo! 👋 need a website? ask me anything</p>
           </div>
           <button
-            onClick={(e) => { e.stopPropagation(); setGreeting(false); }}
-            className="shrink-0 mt-0.5 grid place-items-center w-6 h-6 rounded-full bg-ink/80 text-white hover:bg-ink transition-colors"
+            onClick={(e) => {
+              e.stopPropagation();
+              setGreeting(false);
+            }}
+            className="shrink-0 -mt-1.5 -mr-1.5 grid place-items-center w-10 h-10 rounded-full bg-ink/80 text-white hover:bg-ink transition-colors"
             aria-label="dismiss greeting"
           >
-            <X className="w-3 h-3" />
+            <X className="w-4 h-4" />
           </button>
         </div>
       )}
 
       {/* Floating button */}
       <button
-        onClick={() => { setOpen((v) => !v); setGreeting(false); }}
+        onClick={() => {
+          setOpen((v) => !v);
+          setGreeting(false);
+        }}
         type="button"
         aria-label={open ? "close chat" : "open chat"}
         title="Hamza assistant"
         className="fixed bottom-5 right-5 z-50 grid place-items-center w-16 h-16 sm:w-16 sm:h-16 rounded-full bg-[#0f172a] text-white border border-white/10 shadow-[0_14px_32px_rgba(15,23,42,0.28)] transform transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 active:translate-y-0"
       >
-        {open ? (
-          <X className="w-6 h-6" />
-        ) : (
-          <MessageCircle className="w-7 h-7 text-white" />
-        )}
+        {open ? <X className="w-6 h-6" /> : <MessageCircle className="w-7 h-7 text-white" />}
       </button>
 
       {/* Panel */}
@@ -132,12 +140,12 @@ export function Chatbot() {
         </div>
 
         {messages.length <= 1 && (
-          <div className="px-3 pb-2 flex flex-wrap gap-1.5">
+          <div className="px-3 pb-2 flex flex-wrap gap-2 sm:gap-1.5">
             {SUGGESTIONS.map((s) => (
               <button
                 key={s}
                 onClick={() => send(s)}
-                className="font-mono text-[11px] px-2 py-1 bg-lime border-2 border-ink rounded-md brutal-hover"
+                className="font-mono text-xs px-3 py-2 sm:text-[11px] sm:px-2 sm:py-1 bg-lime border-2 border-ink rounded-md brutal-hover"
               >
                 {s}
               </button>
@@ -146,7 +154,10 @@ export function Chatbot() {
         )}
 
         <form
-          onSubmit={(e) => { e.preventDefault(); send(input); }}
+          onSubmit={(e) => {
+            e.preventDefault();
+            send(input);
+          }}
           className="p-2 border-t-2 border-ink bg-white flex gap-2"
         >
           <input
