@@ -13,9 +13,9 @@ import appCssText from "../styles.css?inline";
 import { HAMZA } from "@/lib/portfolio-data";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "../components/Nav";
-import { Footer } from "../components/Footer";
 import { lazy, Suspense } from "react";
 
+const Footer = lazy(() => import("../components/Footer").then((m) => ({ default: m.Footer })));
 const Chatbot = lazy(() => import("../components/Chatbot").then((m) => ({ default: m.Chatbot })));
 
 function NotFoundComponent() {
@@ -129,6 +129,7 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <title>Hamza Mehmood — Web Developer</title>
         <HeadContent />
         <style dangerouslySetInnerHTML={{ __html: appCssText }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -166,7 +167,9 @@ function RootComponent() {
       <main className="min-h-[60vh]">
         <Outlet />
       </main>
-      <Footer />
+      <Suspense fallback={<div className="h-40 bg-ink" />}>
+        <Footer />
+      </Suspense>
       <Suspense fallback={null}>
         <Chatbot />
       </Suspense>

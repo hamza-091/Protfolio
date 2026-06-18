@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PROJECTS, HAMZA } from "@/lib/portfolio-data";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ArrowRight, Star, MessageCircle } from "lucide-react";
+import { lazy, Suspense } from "react";
+
 // Use local image from the project's images folder
 const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.webp";
-import { ArrowRight, Star, MessageCircle } from "lucide-react";
-import { Marquee } from "@/components/Marquee";
+
+const Marquee = lazy(() => import("@/components/Marquee").then((m) => ({ default: m.Marquee })));
+const ProjectCard = lazy(() => import("@/components/ProjectCard").then((m) => ({ default: m.ProjectCard })));
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -102,7 +105,9 @@ function Home() {
         </div>
       </section>
 
-      <Marquee />
+      <Suspense fallback={<div className="h-16 bg-transparent" />}>
+        <Marquee />
+      </Suspense>
       {/* FEATURED WORK */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-20">
         <div className="flex items-end justify-between mb-10 gap-4 flex-wrap">
@@ -121,9 +126,11 @@ function Home() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-10 md:gap-14">
-          {featured.map((p, i) => (
-            <ProjectCard key={p.slug} project={p} index={i} />
-          ))}
+          <Suspense fallback={<div className="h-96 col-span-2 flex items-center justify-center">Loading projects...</div>}>
+            {featured.map((p, i) => (
+              <ProjectCard key={p.slug} project={p} index={i} />
+            ))}
+          </Suspense>
         </div>
       </section>
 
