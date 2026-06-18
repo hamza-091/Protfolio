@@ -9,13 +9,13 @@ import { Marquee } from "@/components/Marquee";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { title: "Hamza Mehmood — Web Developer" },
       {
         name: "description",
         content: "Hamza Mehmood builds sharp, scroll-stopping websites with a clean, modern edge.",
       },
     ],
     links: [{ rel: "canonical", href: "https://protfolio-ebon-two.vercel.app/" }],
-    title: "Hamza Mehmood — Web Developer",
   }),
   component: Home,
 });

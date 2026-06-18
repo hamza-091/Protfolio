@@ -6,6 +6,7 @@ import { HAMZA } from "@/lib/portfolio-data";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
+      { title: "About — Hamza Mehmood" },
       {
         name: "description",
         content:
@@ -18,7 +19,6 @@ export const Route = createFileRoute("/about")({
       },
     ],
     links: [{ rel: "canonical", href: "https://protfolio-ebon-two.vercel.app/about" }],
-    title: "About — Hamza Mehmood",
   }),
   component: About,
 });

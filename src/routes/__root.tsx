@@ -82,6 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
+      { title: "Hamza Mehmood — Web Developer" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         name: "description",
@@ -108,7 +109,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         onLoad: "this.media='all'",
       },
     ],
-    title: "Hamza Mehmood — Web Developer",
   }),
   shellComponent: RootShell,
   component: RootComponent,

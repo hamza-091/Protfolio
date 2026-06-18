@@ -5,6 +5,7 @@ import { Mail, Linkedin, MessageCircle } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
+      { title: "Contact — Hamza Mehmood" },
       {
         name: "description",
         content:
@@ -17,7 +18,6 @@ export const Route = createFileRoute("/contact")({
       },
     ],
     links: [{ rel: "canonical", href: "https://protfolio-ebon-two.vercel.app/contact" }],
-    title: "Contact — Hamza Mehmood",
   }),
   component: Contact,
 });

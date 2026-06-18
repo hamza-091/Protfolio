@@ -5,6 +5,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
+      { title: "Work — Hamza Mehmood" },
       {
         name: "description",
         content:
@@ -18,7 +19,6 @@ export const Route = createFileRoute("/work")({
       },
     ],
     links: [{ rel: "canonical", href: "https://protfolio-ebon-two.vercel.app/work" }],
-    title: "Work — Hamza Mehmood",
   }),
   component: Work,
 });
