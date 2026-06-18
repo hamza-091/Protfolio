@@ -6,10 +6,10 @@ import { MessageCircle, X, Send, Sparkles } from "lucide-react";
 type Msg = { role: "user" | "assistant"; content: string };
 
 const SUGGESTIONS = [
-  "What kind of web work does Hamza do?",
-  "What services are available for a website project?",
-  "Which technologies does Hamza use?",
-  "How can I get in touch with Hamza?",
+  "What's your strongest project?",
+  "Are you available for freelance work?",
+  "What can you build for my business?",
+  "How much do you charge for a landing page?",
 ];
 
 export function Chatbot() {

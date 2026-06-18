@@ -16,8 +16,10 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Get in touch — open for web development engagements.",
       },
+      { property: "og:image", content: "https://www.devhamza.tech/images/og-image.png" },
+      { name: "twitter:image", content: "https://www.devhamza.tech/images/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://protfolio-ebon-two.vercel.app/contact" }],
+    links: [{ rel: "canonical", href: "https://www.devhamza.tech/contact" }],
   }),
   component: Contact,
 });

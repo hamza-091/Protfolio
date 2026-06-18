@@ -17,8 +17,10 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "Web developer focused on clean, production-ready interfaces.",
       },
+      { property: "og:image", content: "https://www.devhamza.tech/images/og-image.png" },
+      { name: "twitter:image", content: "https://www.devhamza.tech/images/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://protfolio-ebon-two.vercel.app/about" }],
+    links: [{ rel: "canonical", href: "https://www.devhamza.tech/about" }],
   }),
   component: About,
 });
@@ -115,9 +117,6 @@ function About() {
             <p>
               <span className="text-muted-foreground">Status</span> → Fresh Graduate
             </p>
-            <p>
-              <span className="text-muted-foreground">CGPA</span> → 3.0
-            </p>
           </div>
         </div>
 
@@ -147,6 +146,16 @@ function About() {
               arbitrage operation at up to 20% ROI, and built a series of personal projects,
               including six professional landing pages and a handful of utility builds.
             </p>
+          </div>
+
+          <div className="mt-8">
+            <a
+              href="/images/Hamza CV.pdf"
+              download="Hamza_Mehmood_Resume.pdf"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-ink text-cream font-mono text-sm rounded-md brutal brutal-hover"
+            >
+              Download Resume →
+            </a>
           </div>
 
           {/* SKILLS */}

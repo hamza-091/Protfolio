@@ -47,6 +47,11 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           <ArrowUpRight className="w-6 h-6 shrink-0 transition-transform group-hover:rotate-45" />
         </div>
         <p className="mt-2 text-sm text-muted-foreground">{project.blurb}</p>
+        {project.challengeSolution && (
+          <p className="mt-3 text-xs border-t border-dashed border-ink/20 pt-2.5 font-sans leading-relaxed text-ink/80">
+            {project.challengeSolution}
+          </p>
+        )}
         <div className="mt-3 flex flex-wrap gap-1.5">
           {project.stack.map((s) => (
             <span

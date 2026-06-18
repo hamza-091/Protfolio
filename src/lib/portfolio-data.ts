@@ -5,6 +5,7 @@ export type Project = {
   title: string;
   tag: string;
   blurb: string;
+  challengeSolution?: string;
   url: string;
   image: string;
   accent: "lime" | "pink" | "electric" | "cream";
@@ -28,6 +29,8 @@ export const PROJECTS: Project[] = [
     tag: "Writing platform",
     blurb:
       "A focused, modern editor designed for writers who care about polish — clean typography, distraction-free flow, and an interface that gets out of the way.",
+    challengeSolution:
+      "Challenge: Writers needed a distraction-free environment with premium feel. Solution: Built a minimal Next.js editor UI with clean typography, smooth transitions, and a focused layout that communicates quality instantly.",
     url: "https://scriptly-shine.lovable.app/",
     image: "/images/screencapture-scriptly-shine-lovable-app-2026-06-04-17_02_05.webp",
     accent: "electric",
@@ -41,6 +44,8 @@ export const PROJECTS: Project[] = [
     tag: "Luxury real estate",
     blurb:
       "An editorial brand site for a premium residential development. Dark navy palette, gold accents, refined motion, and a measured, confident voice throughout.",
+    challengeSolution:
+      "Challenge: Premium real estate needed an online presence reflecting luxury and confident authority. Solution: Developed an editorial brand site with navy and gold styling, subtle hover states, and smooth navigation to showcase properties.",
     url: "https://elara-residences.lovable.app/",
     image: "/images/screencapture-elara-residences-lovable-app-2026-06-04-17_02_32.webp",
     accent: "cream",
@@ -54,6 +59,8 @@ export const PROJECTS: Project[] = [
     tag: "Fine dining",
     blurb:
       "Moody, atmospheric site for a fine-dining restaurant — full reservation flow, signature menu, and chef-led storytelling delivered with a cinematic finish.",
+    challengeSolution:
+      "Challenge: Fine-dining brand needed a digital showcase that matches their atmospheric, moody venue. Solution: Crafted a dark, cinematic-themed reservation landing page with immersive scroll sections and clean booking call-to-actions.",
     url: "https://ember-saffron.lovable.app/",
     image: "/images/screencapture-ember-saffron-lovable-app-2026-06-04-17_03_25.webp",
     accent: "pink",
@@ -67,6 +74,8 @@ export const PROJECTS: Project[] = [
     tag: "Performance gym",
     blurb:
       "A high-energy brand site for a performance gym — coaches, plans, transformations, and a mobile-app pitch packaged with bold visual rhythm.",
+    challengeSolution:
+      "Challenge: Performance gym needed a high-energy site to pitch coaching plans and a custom mobile app. Solution: Built a high-contrast layout featuring bold typography, dynamic hover states, and clear app-store conversion sections.",
     url: "https://apex-athletic-spark.lovable.app/",
     image: "/images/screencapture-apex-athletic-spark-lovable-app-2026-06-04-17_04_05.webp",
     accent: "lime",
@@ -80,6 +89,8 @@ export const PROJECTS: Project[] = [
     tag: "Fashion storefront",
     blurb:
       "A quiet, soft-neutral storefront for a Scandinavian-inspired label — bestsellers, monochrome edits, fit guides, and a checkout that feels effortless.",
+    challengeSolution:
+      "Challenge: Scandinavian fashion label needed an e-commerce storefront that feels quiet and effortless. Solution: Created a soft-neutral, minimalist catalog grid and streamlined user flows focusing purely on product photography.",
     url: "https://scandi-chic-aven.lovable.app/",
     image: "/images/screencapture-scandi-chic-aven-lovable-app-2026-06-04-17_04_41.webp",
     accent: "cream",
@@ -93,6 +104,8 @@ export const PROJECTS: Project[] = [
     tag: "Education platform",
     blurb:
       "An online learning marketplace with course discovery, instructor pages, pricing tiers, certificates, and a polished mobile pitch.",
+    challengeSolution:
+      "Challenge: E-learning platform needed a trusted dashboard interface to sell professional certificates. Solution: Designed a course marketplace layout with structured price tiers, clear curriculum outlines, and instructor profiles.",
     url: "https://elevate-your-skill-73.lovable.app/",
     image: "/images/screencapture-elevate-your-skill-73-lovable-app-2026-06-04-17_05_36.webp",
     accent: "electric",
@@ -110,6 +123,14 @@ export const MISC_PROJECTS: MiscProject[] = [
     blurb:
       "A 24/7 healthcare calling agent built with Twilio, GPT-4, Next.js, MongoDB, and Node.js. It includes dual-layer emergency detection, live call logs, transcripts, and an admin dashboard.",
     stack: ["Twilio", "OpenAI", "Next.js", "MongoDB", "Node.js"],
+  },
+  {
+    title: "Shrinkr — URL Shortener",
+    where: "Personal project",
+    year: "2024",
+    blurb:
+      "A full-stack URL shortener with analytics, custom short links, JWT auth, and a clean dashboard. Built and deployed end-to-end.",
+    stack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
   },
   {
     title: "SmartPOS",
@@ -148,7 +169,7 @@ Name: Hamza Mehmood
 Role: Web Developer
 Email: hamzamehmood054@gmail.com  |  WhatsApp: +92 311 2823179
 LinkedIn: https://www.linkedin.com/in/hamzamehmoodd/
-Background: Fresh Computer Science graduate (BSc), Bahria University, Class of 2026, CGPA 3.0.
+Background: Fresh Computer Science graduate (BSc), Bahria University, Class of 2026.
 Focus: building production-ready web applications, thoughtful frontends, and practical
 automations for real businesses.
 
@@ -171,7 +192,7 @@ automations for real businesses.
 4. Client landing pages (6): Scriptly, Elara Residences, Ember Saffron, Apex Athletic, Aven, and ElevateU. These are polished landing-page builds for writing, real estate, dining, fitness, fashion, and education brands.
 
 == EDUCATION ==
-- BSc Computer Science, Bahria University, Oct 2022 – 2026. CGPA 3.0.
+- BSc Computer Science, Bahria University, Oct 2022 – 2026.
   Coursework: Data Structures, OOP, DBMS, Web Engineering, Machine Learning, Software Quality Assurance.
 - Pre-Engineering, Cadet College Petaro, 2016–2021, 88%.
 

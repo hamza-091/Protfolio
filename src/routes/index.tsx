@@ -1,13 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PROJECTS, HAMZA } from "@/lib/portfolio-data";
-import { ArrowRight, Star, MessageCircle } from "lucide-react";
+import { ArrowRight, Star, MessageCircle, Linkedin } from "lucide-react";
 import { lazy, Suspense } from "react";
 
 // Use local image from the project's images folder
 const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.webp";
 
 const Marquee = lazy(() => import("@/components/Marquee").then((m) => ({ default: m.Marquee })));
-const ProjectCard = lazy(() => import("@/components/ProjectCard").then((m) => ({ default: m.ProjectCard })));
+const ProjectCard = lazy(() =>
+  import("@/components/ProjectCard").then((m) => ({ default: m.ProjectCard })),
+);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,8 +19,10 @@ export const Route = createFileRoute("/")({
         name: "description",
         content: "Hamza Mehmood builds sharp, scroll-stopping websites with a clean, modern edge.",
       },
+      { property: "og:image", content: "https://www.devhamza.tech/images/og-image.png" },
+      { name: "twitter:image", content: "https://www.devhamza.tech/images/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://protfolio-ebon-two.vercel.app/" }],
+    links: [{ rel: "canonical", href: "https://www.devhamza.tech/" }],
   }),
   component: Home,
 });
@@ -74,7 +78,7 @@ function Home() {
             </div>
 
             <div className="mt-10 flex items-center gap-6 font-mono text-xs">
-              <Stat n="3 yrs" l="Building for the web" />
+              <Stat n="2+ yrs" l="Building for the web" />
               <Stat n="100%" l="Hands-on" />
             </div>
           </div>
@@ -105,6 +109,43 @@ function Home() {
         </div>
       </section>
 
+      {/* SERVICES */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-20 border-b-2 border-ink">
+        <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+          / What I Do
+        </p>
+        <h2 className="mt-2 font-display text-5xl sm:text-6xl mb-12">My Services.</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-card brutal rounded-2xl p-6 border-2 border-ink">
+            <span className="font-mono text-2xl font-black text-lime bg-ink px-3 py-1 rounded-md brutal-sm inline-block mb-4">
+              01
+            </span>
+            <h3 className="font-display text-2xl mb-2">Web Development</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Full-stack apps, dashboards, and landing pages.
+            </p>
+          </div>
+          <div className="bg-card brutal rounded-2xl p-6 border-2 border-ink">
+            <span className="font-mono text-2xl font-black text-pink bg-ink px-3 py-1 rounded-md brutal-sm inline-block mb-4">
+              02
+            </span>
+            <h3 className="font-display text-2xl mb-2">AI Integration</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Chatbots, voice agents, and automation workflows.
+            </p>
+          </div>
+          <div className="bg-card brutal rounded-2xl p-6 border-2 border-ink">
+            <span className="font-mono text-2xl font-black text-electric bg-ink px-3 py-1 rounded-md brutal-sm inline-block mb-4">
+              03
+            </span>
+            <h3 className="font-display text-2xl mb-2">SEO & Performance</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Fast, optimized, search-ready builds.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <Suspense fallback={<div className="h-16 bg-transparent" />}>
         <Marquee />
       </Suspense>
@@ -126,7 +167,13 @@ function Home() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-10 md:gap-14">
-          <Suspense fallback={<div className="h-96 col-span-2 flex items-center justify-center">Loading projects...</div>}>
+          <Suspense
+            fallback={
+              <div className="h-96 col-span-2 flex items-center justify-center">
+                Loading projects...
+              </div>
+            }
+          >
             {featured.map((p, i) => (
               <ProjectCard key={p.slug} project={p} index={i} />
             ))}
@@ -161,6 +208,14 @@ function Home() {
               className="inline-flex items-center gap-2 px-6 py-3 bg-cream text-ink font-mono text-sm rounded-md brutal brutal-hover"
             >
               <MessageCircle className="w-4 h-4" /> WhatsApp
+            </a>
+            <a
+              href={HAMZA.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-cream text-ink font-mono text-sm rounded-md brutal brutal-hover"
+            >
+              <Linkedin className="w-4 h-4" /> LinkedIn
             </a>
           </div>
         </div>

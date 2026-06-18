@@ -17,8 +17,10 @@ export const Route = createFileRoute("/work")({
         content:
           "Web development work by Hamza Mehmood, including landing pages and miscellaneous projects.",
       },
+      { property: "og:image", content: "https://www.devhamza.tech/images/og-image.png" },
+      { name: "twitter:image", content: "https://www.devhamza.tech/images/og-image.png" },
     ],
-    links: [{ rel: "canonical", href: "https://protfolio-ebon-two.vercel.app/work" }],
+    links: [{ rel: "canonical", href: "https://www.devhamza.tech/work" }],
   }),
   component: Work,
 });
