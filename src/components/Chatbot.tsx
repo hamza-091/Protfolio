@@ -167,7 +167,7 @@ export function Chatbot() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask a question…"
             aria-label="Ask a question about Hamza"
-            className="flex-1 min-w-0 px-3 py-2 text-sm bg-cream border-2 border-ink rounded-md focus:outline-none focus:ring-2 focus:ring-electric font-mono"
+            className="flex-1 min-w-0 px-3 py-2 text-sm bg-cream border-2 border-ink rounded-md focus:outline-none focus:ring-2 focus:ring-electric font-mono placeholder:text-ink/60"
           />
           <button
             type="submit"

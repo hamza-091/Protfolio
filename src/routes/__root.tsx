@@ -141,11 +141,6 @@ function RootShell({ children }: { children: ReactNode }) {
           media="print"
         />
         <script
-          dangerouslySetInnerHTML={{
-            __html: "requestAnimationFrame(function() { document.getElementById('google-fonts').media='all'; });",
-          }}
-        />
-        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
         />
@@ -160,6 +155,13 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    const fontsLink = document.getElementById("google-fonts") as HTMLLinkElement | null;
+    if (fontsLink) {
+      fontsLink.media = "all";
+    }
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
