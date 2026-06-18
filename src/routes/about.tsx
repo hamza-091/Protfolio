@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 // Use local image from /images folder
-const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.webp";
+const hamzaImgPath = "/images/profile.webp";
 import { HAMZA } from "@/lib/portfolio-data";
 
 export const Route = createFileRoute("/about")({
@@ -30,7 +30,6 @@ const SKILLS = [
   "TypeScript",
   "React",
   "Next.js 14",
-  "React Native",
   "Node.js",
   "Express.js",
   "HTML/CSS",
@@ -53,21 +52,15 @@ const TIMELINE = [
   },
   {
     year: "2025",
-    title: "E-Commerce Listing Intern",
-    where: "GE Solucions",
-    body: "Optimized over 100 product listings, supported inventory tracking, and improved store-level performance metrics.",
+    title: "Data Science Intern",
+    where: "Internship · UNITZERO (Pvt) Limited",
+    body: "Completed a data science internship focusing on real-world data pipelines, analysis workflows, and ML model development. Gained hands-on experience with Python, data preprocessing, and applied AI techniques in a professional environment.",
   },
   {
     year: "2025",
     title: "WordPress Developer",
     where: "Fiverr · MichaelThal.com",
     body: "Delivered a fully responsive, SEO-optimized site for a professional author using the Blocksy theme. Managed client communication and delivery end-to-end.",
-  },
-  {
-    year: "2024–25",
-    title: "Amazon UK Retail Arbitrage",
-    where: "Virtual Assistant",
-    body: "Sourced and managed inventory on Amazon UK using Keepa and Helium 10, achieving up to 20% ROI.",
   },
   {
     year: "2024",
@@ -114,9 +107,6 @@ function About() {
             <p>
               <span className="text-muted-foreground">Education</span> → BSc Computer Science (2026)
             </p>
-            <p>
-              <span className="text-muted-foreground">Status</span> → Fresh Graduate
-            </p>
           </div>
         </div>
 
@@ -132,29 +122,24 @@ function About() {
           </h1>
           <div className="mt-6 space-y-4 text-lg leading-relaxed">
             <p>
-              I'm Hamza — a web developer and fresh Computer Science graduate. I design and build
-              web applications, marketing sites, and the integrations that make them work in
-              production.
+              I'm Hamza — a web developer and CS graduate. I design and build web applications,
+              marketing sites, and AI-powered integrations that work in production.
             </p>
             <p>
-              My capstone project, <span className="font-semibold">Almas</span>, is a 24/7 voice
-              calling agent for healthcare built with Twilio, GPT-4 and Next.js, featuring a
-              dual-layer emergency detection system that resolved 6/6 test scenarios.
-            </p>
-            <p>
-              Outside coursework I've delivered WordPress sites for paying clients, run an Amazon UK
-              arbitrage operation at up to 20% ROI, and built a series of personal projects,
-              including six professional landing pages and a handful of utility builds.
+              My capstone project, Almas, is a 24/7 voice calling agent for healthcare built with
+              Twilio, GPT-4 and Next.js — featuring dual-layer emergency detection that resolved 6/6
+              test scenarios. I've also delivered client sites on Fiverr and built a full digital
+              agency, Nexivon, offering web development and AI integration services.
             </p>
           </div>
 
           <div className="mt-8">
             <a
-              href="/images/Hamza CV.pdf"
+              href="/files/hamza-cv.pdf"
               download="Hamza_Mehmood_Resume.pdf"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-ink text-cream font-mono text-sm rounded-md brutal brutal-hover"
             >
-              Download Resume →
+              Download CV →
             </a>
           </div>
 
@@ -194,9 +179,8 @@ function About() {
           <div className="mt-14 bg-lime brutal rounded-2xl p-6">
             <h2 className="font-display text-3xl">Certifications.</h2>
             <ul className="mt-3 space-y-1 font-mono text-sm">
-              <li>· CPSP — Certified Professional Safety Practitioner</li>
-              <li>· Enablers E-Commerce Business Training Program</li>
-              <li>· AutoCAD 2D/3D Design</li>
+              <li>· Data Science Internship — UNITZERO (Pvt) Limited, 2025</li>
+              <li>· Bahria University — BSc Computer Science, 2026</li>
             </ul>
           </div>
         </div>

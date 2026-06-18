@@ -129,7 +129,7 @@ export const MISC_PROJECTS: MiscProject[] = [
     where: "Personal project",
     year: "2024",
     blurb:
-      "A full-stack URL shortener with analytics, custom short links, JWT auth, and a clean dashboard. Built and deployed end-to-end.",
+      "A full-stack URL shortener with custom short links, click analytics, JWT authentication, and a clean dashboard. Built and deployed end-to-end on Render and Vercel.",
     stack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
   },
   {
@@ -174,22 +174,22 @@ Focus: building production-ready web applications, thoughtful frontends, and pra
 automations for real businesses.
 
 == SKILLS ==
-- Languages & Frameworks: JavaScript, TypeScript, React, Next.js 14, React Native (Expo), Node.js, Express.js, HTML/CSS
+- Languages & Frameworks: JavaScript, TypeScript, React, Next.js 14, Node.js, Express.js, HTML/CSS
 - Web & UI: Tailwind CSS, responsive design, accessibility, SEO fundamentals
 - Backend & Data: MongoDB, MySQL, REST APIs, Git/GitHub
 - Integrations & Automation: OpenAI APIs, Twilio, n8n workflows
 - CMS & E-Commerce: WordPress (Blocksy)
 
 == EXPERIENCE ==
-- E-Commerce Listing Intern, GE Solucions (Oct–Nov 2025): optimized 100+ product listings and supported store operations.
+- Data Science Intern, UNITZERO (Pvt) Limited (2025): completed a data science internship focusing on real-world data pipelines, analysis workflows, and ML model development.
 - WordPress Developer, Fiverr / MichaelThal.com (Jan–May 2025): delivered a responsive, SEO-optimized author website using the Blocksy theme.
-- Virtual Assistant, Amazon UK retail arbitrage (Oct 2024–Jan 2025): sourced and managed inventory using Keepa and Helium 10, achieving up to 20% ROI.
 
 == PROJECTS ==
 1. Capstone project: Almas — Voice Calling Agent (2025–26). Stack: Twilio, OpenAI GPT-4, Next.js 14, MongoDB, Tailwind, Node.js. Handles 24/7 inbound healthcare calls with dual-layer emergency detection and an admin dashboard for logs and transcripts.
-2. Personal project: SmartPOS (2024). React + Node + MySQL. Real-time billing, inventory management, and product modules.
-3. Personal project: Stock Price Prediction (2024). Python with scikit-learn, Pandas, and Matplotlib. Supervised ML pipeline on live data feeds.
-4. Client landing pages (6): Scriptly, Elara Residences, Ember Saffron, Apex Athletic, Aven, and ElevateU. These are polished landing-page builds for writing, real estate, dining, fitness, fashion, and education brands.
+2. Personal project: Shrinkr — URL Shortener (2024). React + Node + Express + MongoDB + JWT. Full-stack URL shortener with analytics and JWT auth.
+3. Personal project: SmartPOS (2024). React + Node + MySQL. Real-time billing, inventory management, and product modules.
+4. Personal project: Stock Price Prediction (2024). Python with scikit-learn, Pandas, and Matplotlib. Supervised ML pipeline on live data feeds.
+5. Client landing pages (6): Scriptly, Elara Residences, Ember Saffron, Apex Athletic, Aven, and ElevateU. These are polished landing-page builds for writing, real estate, dining, fitness, fashion, and education brands.
 
 == EDUCATION ==
 - BSc Computer Science, Bahria University, Oct 2022 – 2026.
@@ -197,9 +197,8 @@ automations for real businesses.
 - Pre-Engineering, Cadet College Petaro, 2016–2021, 88%.
 
 == CERTIFICATIONS ==
-- CPSP — Certified Professional Safety Practitioner
-- Enablers E-Commerce Business Training Program
-- AutoCAD 2D/3D Design
+- Data Science Internship — UNITZERO (Pvt) Limited, 2025
+- Bahria University — BSc Computer Science, 2026
 
 == CONTACT ==
 Focused on web development, frontend roles, and automation/integration projects.

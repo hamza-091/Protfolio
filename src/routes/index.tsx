@@ -4,7 +4,7 @@ import { ArrowRight, Star, MessageCircle, Linkedin } from "lucide-react";
 import { lazy, Suspense } from "react";
 
 // Use local image from the project's images folder
-const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.webp";
+const hamzaImgPath = "/images/profile.webp";
 
 const Marquee = lazy(() => import("@/components/Marquee").then((m) => ({ default: m.Marquee })));
 const ProjectCard = lazy(() =>
@@ -78,7 +78,7 @@ function Home() {
             </div>
 
             <div className="mt-10 flex items-center gap-6 font-mono text-xs">
-              <Stat n="2+ yrs" l="Building for the web" />
+              <Stat n="6" l="Projects shipped" />
               <Stat n="100%" l="Hands-on" />
             </div>
           </div>
@@ -112,17 +112,17 @@ function Home() {
       {/* SERVICES */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-20 border-b-2 border-ink">
         <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-          / What I Do
+          / What I do
         </p>
         <h2 className="mt-2 font-display text-5xl sm:text-6xl mb-12">My Services.</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-card brutal rounded-2xl p-6 border-2 border-ink">
             <span className="font-mono text-2xl font-black text-lime bg-ink px-3 py-1 rounded-md brutal-sm inline-block mb-4">
               01
             </span>
             <h3 className="font-display text-2xl mb-2">Web Development</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Full-stack apps, dashboards, and landing pages.
+              Full-stack apps, marketing sites, and dashboards — built clean and shipped fast.
             </p>
           </div>
           <div className="bg-card brutal rounded-2xl p-6 border-2 border-ink">
@@ -131,16 +131,7 @@ function Home() {
             </span>
             <h3 className="font-display text-2xl mb-2">AI Integration</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Chatbots, voice agents, and automation workflows.
-            </p>
-          </div>
-          <div className="bg-card brutal rounded-2xl p-6 border-2 border-ink">
-            <span className="font-mono text-2xl font-black text-electric bg-ink px-3 py-1 rounded-md brutal-sm inline-block mb-4">
-              03
-            </span>
-            <h3 className="font-display text-2xl mb-2">SEO & Performance</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Fast, optimized, search-ready builds.
+              Chatbots, voice agents, and automation workflows wired into real products.
             </p>
           </div>
         </div>
