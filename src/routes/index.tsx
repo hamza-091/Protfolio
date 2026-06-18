@@ -4,7 +4,7 @@ import { ArrowRight, Star, MessageCircle, Linkedin } from "lucide-react";
 import { lazy, Suspense } from "react";
 
 // Use local image from the project's images folder
-const hamzaImgPath = "/images/profile.webp";
+const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.webp";
 
 const Marquee = lazy(() => import("@/components/Marquee").then((m) => ({ default: m.Marquee })));
 const ProjectCard = lazy(() =>

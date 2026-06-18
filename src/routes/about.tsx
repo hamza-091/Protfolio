@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 // Use local image from /images folder
-const hamzaImgPath = "/images/profile.webp";
+const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.webp";
 import { HAMZA } from "@/lib/portfolio-data";
 
 export const Route = createFileRoute("/about")({
