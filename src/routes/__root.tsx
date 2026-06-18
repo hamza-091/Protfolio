@@ -9,7 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
-import appCssText from "../styles.css?inline";
+import appCss from "../styles.css?url";
 import { HAMZA } from "@/lib/portfolio-data";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "../components/Nav";
@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "https://www.devhamza.tech/images/og-image.png" },
     ],
-    links: [],
+    links: [{ rel: "stylesheet", href: appCss }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -133,14 +133,11 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <title>Hamza Mehmood — Web Developer</title>
         <HeadContent />
-        <style dangerouslySetInnerHTML={{ __html: appCssText }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
-          id="google-fonts"
           href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-          media="print"
         />
         <script
           type="application/ld+json"
@@ -157,13 +154,6 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
-  useEffect(() => {
-    const fontsLink = document.getElementById("google-fonts") as HTMLLinkElement | null;
-    if (fontsLink) {
-      fontsLink.media = "all";
-    }
-  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

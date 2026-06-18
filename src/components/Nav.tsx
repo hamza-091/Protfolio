@@ -20,14 +20,14 @@ export function Nav() {
             Hamza<span className="text-pink">.</span>
           </span>
         </Link>
-        <nav className="flex items-center gap-2">
+        <nav className="flex items-center gap-1.5 sm:gap-2">
           {links
             .filter((l) => l.label !== "Contact")
             .map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
-                className="px-4 py-3 text-base sm:px-3 sm:py-1.5 sm:text-sm font-mono rounded-md hover:bg-lime transition-colors data-[status=active]:bg-ink data-[status=active]:text-cream"
+                className="px-2 py-1 text-sm sm:px-3 sm:py-1.5 sm:text-sm font-mono rounded-md hover:bg-lime transition-colors data-[status=active]:bg-ink data-[status=active]:text-cream"
                 activeOptions={{ exact: true }}
               >
                 {l.label}
@@ -35,7 +35,7 @@ export function Nav() {
             ))}
           <Link
             to="/contact"
-            className="ml-1 hidden sm:inline-flex px-3 py-1.5 text-sm font-mono bg-pink text-white brutal-sm brutal-hover rounded-md"
+            className="ml-0.5 inline-flex px-2.5 py-1 text-sm sm:px-3 sm:py-1.5 sm:text-sm font-mono bg-pink text-white brutal-sm brutal-hover rounded-md"
             activeOptions={{ exact: true }}
           >
             Contact ↗
