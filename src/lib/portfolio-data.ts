@@ -39,6 +39,21 @@ export const PROJECTS: Project[] = [
     stack: ["WordPress", "Blocksy", "SEO"],
   },
   {
+    slug: "shrinkr",
+    title: "Shrinkr",
+    tag: "URL Shortener",
+    blurb:
+      "A full-stack URL shortener with click analytics, custom short links, QR code generation, and a clean dashboard.",
+    challengeSolution:
+      "Challenge: Free URL shorteners lack detailed click analytics and custom branding. Solution: Engineered a full-stack platform with real-time analytics, custom aliases, dynamic QR codes, and JWT authentication.",
+    url: "https://www.urlshrinkr.me/",
+    image: "/images/screencapture-shrinkr.webp",
+    accent: "pink",
+    rotate: "rotate-1",
+    year: "2024",
+    stack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+  },
+  {
     slug: "scriptly",
     title: "Scriptly",
     tag: "Writing platform",
@@ -140,14 +155,6 @@ export const MISC_PROJECTS: MiscProject[] = [
     stack: ["Twilio", "OpenAI", "Next.js", "MongoDB", "Node.js"],
   },
   {
-    title: "Shrinkr — URL Shortener",
-    where: "Personal project",
-    year: "2024",
-    blurb:
-      "A full-stack URL shortener with custom short links, click analytics, JWT authentication, and a clean dashboard. Built and deployed end-to-end on Render and Vercel.",
-    stack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
-  },
-  {
     title: "SmartPOS",
     where: "Personal project",
     year: "2024",
@@ -196,12 +203,12 @@ Focus: building production-ready web applications, thoughtful frontends, and pra
 - WordPress Developer, Fiverr / MichaelThal.com (Jan–May 2025): delivered a responsive, SEO-optimized author website using the Blocksy theme.
 
 == PROJECTS ==
-1. Client project: MichaelThal.com (2025). Fully responsive WordPress build with custom layout, SEO optimization, and end-to-end client management.
-2. Capstone project: Almas — Voice Calling Agent (2025–26). Stack: Twilio, OpenAI GPT-4, Next.js 14, MongoDB, Tailwind, Node.js. Handles 24/7 inbound healthcare calls with dual-layer emergency detection and an admin dashboard for logs and transcripts.
-3. Personal project: Shrinkr — URL Shortener (2024). React + Node + Express + MongoDB + JWT. Full-stack URL shortener with analytics and JWT auth.
-4. Personal project: SmartPOS (2024). React + Node + MySQL. Real-time billing, inventory management, and product modules.
-5. Personal project: Stock Price Prediction (2024). Python with scikit-learn, Pandas, and Matplotlib. Supervised ML pipeline on live data feeds.
-6. Client landing pages (6): Scriptly, Elara Residences, Ember Saffron, Apex Athletic, Aven, and ElevateU. These are polished landing-page builds for writing, real estate, dining, fitness, fashion, and education brands.
+1. Client project: MichaelThal.com (2025). WordPress author website.
+2. Personal project: Shrinkr — URL Shortener (2024). React, Node.js, Express, MongoDB, JWT. Custom short links and click analytics. Live URL: https://www.urlshrinkr.me/
+3. Capstone project: Almas — Voice Calling Agent (2025–26). Twilio, OpenAI GPT-4, Next.js 14. 24/7 inbound healthcare calls with dual-layer emergency detection.
+4. Client landing pages (6): Scriptly, Elara Residences, Ember Saffron, Apex Athletic, Aven, and ElevateU.
+5. Personal project: SmartPOS (2024). React + Node + MySQL. Real-time billing and inventory.
+6. Personal project: Stock Price Prediction (2024). Python with scikit-learn, Pandas, Matplotlib.
 
 == EDUCATION ==
 - BSc Computer Science, Bahria University, Oct 2022 – 2026.

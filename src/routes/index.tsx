@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const featured = PROJECTS.slice(0, 4);
+  const featured = PROJECTS.slice(0, 3);
   return (
     <div className="grain">
       {/* HERO */}
@@ -147,7 +147,7 @@ function Home() {
             <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
               / Landing pages
             </p>
-            <h2 className="mt-2 font-display text-5xl sm:text-7xl">Six polished builds.</h2>
+            <h2 className="mt-2 font-display text-5xl sm:text-7xl">Polished builds.</h2>
           </div>
           <Link
             to="/work"
@@ -157,10 +157,10 @@ function Home() {
           </Link>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-10 md:gap-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           <Suspense
             fallback={
-              <div className="h-96 col-span-2 flex items-center justify-center">
+              <div className="h-96 col-span-3 flex items-center justify-center">
                 Loading projects...
               </div>
             }

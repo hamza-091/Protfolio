@@ -36,12 +36,12 @@ function Work() {
           Landing<span className="text-pink">.</span> pages<span className="text-pink">.</span>
         </h1>
         <p className="mt-5 text-lg text-muted-foreground">
-          Six polished landing pages built for different brands and products, plus a separate set of
+          Polished landing pages built for different brands and products, plus a separate set of
           miscellaneous projects that show the full range of my web work.
         </p>
       </div>
 
-      <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
+      <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {PROJECTS.map((p, i) => (
           <ProjectCard key={p.slug} project={p} index={i} />
         ))}

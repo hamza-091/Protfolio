@@ -29,13 +29,13 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         <span className="font-mono text-xs">{project.year}</span>
       </div>
 
-      <div className="relative aspect-[4/5] bg-muted overflow-hidden">
+      <div className="relative aspect-[16/10] bg-muted overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
           loading="lazy"
           width={400}
-          height={500}
+          height={250}
           className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />

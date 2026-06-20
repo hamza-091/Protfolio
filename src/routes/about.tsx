@@ -64,6 +64,12 @@ const TIMELINE = [
   },
   {
     year: "2024",
+    title: "Shrinkr — URL Shortener",
+    where: "Personal project · React / Node / Express / MongoDB / JWT",
+    body: "Built a full-stack URL shortener with click analytics, custom short links, dynamic QR codes, and a clean user dashboard. Deployed on Render and Vercel.",
+  },
+  {
+    year: "2024",
     title: "SmartPOS",
     where: "Personal project · React / Node / MySQL",
     body: "Built a point-of-sale system with real-time billing, inventory, and product modules.",
