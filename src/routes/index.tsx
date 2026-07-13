@@ -78,7 +78,7 @@ function Home() {
             </div>
 
             <div className="mt-10 flex items-center gap-6 font-mono text-xs">
-              <Stat n="6" l="Projects shipped" />
+              <Stat n="7" l="Projects shipped" />
               <Stat n="100%" l="Hands-on" />
             </div>
           </div>

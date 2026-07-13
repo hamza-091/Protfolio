@@ -69,6 +69,21 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "TypeScript", "Tailwind"],
   },
   {
+    slug: "email-genie",
+    title: "Email Genie",
+    tag: "AI Email Generator",
+    blurb:
+      "An AI-powered job search assistant that turns job posts into polished, recruiter-ready emails, with auto-fetching features and Gmail integration.",
+    challengeSolution:
+      "Challenge: Writing personalized, high-conversion cover letters and outreach emails for dozens of job listings is time-consuming. Solution: Developed an AI-matching tool that extracts job listing requirements and drafts customized emails, connecting directly to the Gmail API for seamless sending.",
+    url: "https://auto-email-sender-six.vercel.app/",
+    image: "/images/screencapture-auto-email-sender.png",
+    accent: "pink",
+    rotate: "rotate-1",
+    year: "2026",
+    stack: ["React", "Tailwind", "OpenAI API", "Gmail API"],
+  },
+  {
     slug: "elara",
     title: "Elara Residences",
     tag: "Luxury real estate",
@@ -174,7 +189,7 @@ export const MISC_PROJECTS: MiscProject[] = [
 
 export const HAMZA = {
   name: "Hamza Mehmood",
-  role: "Web Developer",
+  role: "Full-Stack Developer",
   email: "hamzamehmood054@gmail.com",
   phone: "+92 311 2823179",
   linkedin: "https://www.linkedin.com/in/hamzamehmoodd/",
@@ -185,41 +200,41 @@ You are Hamza's portfolio assistant. Speak in a casual, direct Gen Z style repre
 
 == ABOUT ==
 Name: Hamza Mehmood
-Role: Web Developer
+Role: Full-Stack Developer
 Email: hamzamehmood054@gmail.com  |  WhatsApp: +92 311 2823179
 LinkedIn: https://www.linkedin.com/in/hamzamehmoodd/
-Background: Fresh Computer Science graduate (BSc), Bahria University, Class of 2026.
+Background: Fresh Computer Science graduate (BSc), Bahria University, Class of 2026. CGPA: 3.12.
 Focus: building production-ready web applications, thoughtful frontends, and practical automations for real businesses.
 
 == SKILLS ==
-- Languages & Frameworks: JavaScript, TypeScript, React, Next.js 14, Node.js, Express.js, HTML/CSS
-- Web & UI: Tailwind CSS, responsive design, accessibility, SEO fundamentals
-- Backend & Data: MongoDB, MySQL, REST APIs, Git/GitHub
-- Integrations & Automation: OpenAI APIs, Twilio, n8n workflows
-- CMS & E-Commerce: WordPress (Blocksy)
+- Languages & Frameworks: JavaScript (ES6+), TypeScript, Python, React, Next.js, Node.js, Tailwind CSS
+- AI & Automation: OpenAI API (GPT-3.5/4), Claude API, Twilio, n8n, LangChain
+- Databases & Tools: MongoDB, MySQL, Git/GitHub, REST APIs, Vercel, Render
 
 == EXPERIENCE ==
-- Data Science Intern, UNITZERO (Pvt) Limited (2025): completed a data science internship focusing on real-world data pipelines, analysis workflows, and ML model development.
-- WordPress Developer, Fiverr / MichaelThal.com (Jan–May 2025): delivered a responsive, SEO-optimized author website using the Blocksy theme.
+- Data Science Intern, UNITZERO (Pvt) Limited (Dec 2025 – Feb 2026): Collaborated on data science initiatives, performed data preprocessing, exploratory data analysis, and built machine learning models. Supported analytical projects with data visualization.
+- E-Commerce Listing Intern, GE Solucions (Oct 2025 – Nov 2025): Managed and optimized 100+ product listings via bulk uploads. Supported inventory tracking and performance reporting.
+- WordPress Developer, Fiverr / MichaelThal.com (Jan–May 2025): Designed and delivered a fully responsive, SEO-optimized personal website for a professional author.
 
 == PROJECTS ==
 1. Client project: MichaelThal.com (2025). WordPress author website.
 2. Personal project: Shrinkr — URL Shortener (2024). React, Node.js, Express, MongoDB, JWT. Custom short links and click analytics. Live URL: https://www.urlshrinkr.me/
-3. Capstone project: Almas — Voice Calling Agent (2025–26). Twilio, OpenAI GPT-4, Next.js 14. 24/7 inbound healthcare calls with dual-layer emergency detection.
-4. Client landing pages (6): Scriptly, Elara Residences, Ember Saffron, Apex Athletic, Aven, and ElevateU.
-5. Personal project: SmartPOS (2024). React + Node + MySQL. Real-time billing and inventory.
-6. Personal project: Stock Price Prediction (2024). Python with scikit-learn, Pandas, Matplotlib.
+3. Personal project: Email Genie (2026). React, Tailwind, OpenAI API, Gmail API. Turn job posts into optimized cover letters/emails and send directly. Live URL: https://auto-email-sender-six.vercel.app/
+4. Capstone project: Almas — Voice Calling Agent (2025–26). Twilio, OpenAI GPT-4, Next.js 14. 24/7 inbound healthcare calls with dual-layer emergency detection.
+5. Client landing pages (6): Scriptly, Elara Residences, Ember Saffron, Apex Athletic, Aven, and ElevateU.
+6. Personal project: SmartPOS (2024). React + Node + MySQL. Real-time billing and inventory.
+7. Personal project: Stock Price Prediction (2024). Python with scikit-learn, Pandas, Matplotlib.
 
 == EDUCATION ==
-- BSc Computer Science, Bahria University, Oct 2022 – 2026.
-- Pre-Engineering, Cadet College Petaro, 2016–2021, 88%.
+- BSc Computer Science, Bahria University Karachi Campus, Oct 2022 – June 2026. CGPA: 3.12.
+- Pre-Engineering, Cadet College Petaro, May 2016 – June 2021, 88%.
 
 == CERTIFICATIONS ==
-- Data Science Internship — UNITZERO (Pvt) Limited, 2025
-- Bahria University — BSc Computer Science, 2026
+- Certified Professional Safety Practitioner (CPSP) — Safety management, risk assessment, emergency response
+- Enablers E-Commerce Business Training Program — Amazon FBA, product research, competitive pricing
 
 == CONTACT ==
-Focused on web development, frontend roles, and automation/integration projects.
+Focused on full-stack web development, frontend roles, and automation/integration projects.
 Preferred contact: hamzamehmood054@gmail.com or WhatsApp at +92 311 2823179.
 
 == SERVICES & PRICING ==

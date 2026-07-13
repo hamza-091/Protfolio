@@ -26,24 +26,35 @@ export const Route = createFileRoute("/about")({
 });
 
 const SKILLS = [
-  "JavaScript",
+  "JavaScript (ES6+)",
   "TypeScript",
+  "Python",
   "React",
-  "Next.js 14",
+  "Next.js",
   "Node.js",
-  "Express.js",
-  "HTML/CSS",
   "Tailwind CSS",
+  "OpenAI API",
+  "Claude API",
+  "Twilio",
+  "n8n Workflows",
+  "LangChain",
   "MongoDB",
   "MySQL",
-  "REST APIs",
   "Git/GitHub",
+  "REST APIs",
+  "Vercel",
+  "Render",
   "WordPress",
-  "Responsive Design",
   "SEO",
 ];
 
 const TIMELINE = [
+  {
+    year: "2026",
+    title: "Email Genie — AI Email Generator",
+    where: "Personal Project · React / Tailwind / OpenAI / Gmail API",
+    body: "Built an AI job assistant that optimizes the job search process. Automatically generates tailored cover letters and outreach emails from job listings and user background, with direct Gmail integration.",
+  },
   {
     year: "2025",
     title: "WordPress Developer",
@@ -99,7 +110,7 @@ function About() {
               />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-lime font-mono text-xs px-3 py-2 brutal-sm rounded-md rotate-6">
-              Web Developer
+              Full-Stack Developer
             </div>
           </div>
 

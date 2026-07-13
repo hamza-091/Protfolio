@@ -9,7 +9,7 @@ export const Route = createFileRoute("/work")({
       {
         name: "description",
         content:
-          "Hamza Mehmood's work includes six polished landing pages plus miscellaneous projects such as a capstone voice agent, SmartPOS, and stock prediction.",
+          "Hamza Mehmood's work includes web applications and six polished landing pages plus miscellaneous projects such as a capstone voice agent, SmartPOS, and stock prediction.",
       },
       { property: "og:title", content: "Work — Hamza Mehmood" },
       {
