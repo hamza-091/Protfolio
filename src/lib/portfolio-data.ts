@@ -22,6 +22,7 @@ export type MiscProject = {
   year: string;
   blurb: string;
   stack: string[];
+  url?: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -107,8 +108,9 @@ export const MISC_PROJECTS: MiscProject[] = [
     where: "Personal project",
     year: "2024",
     blurb:
-      "A machine-learning project that forecasts stock movement from live data feeds using scikit-learn, Pandas, and Matplotlib.",
-    stack: ["Python", "scikit-learn", "Pandas"],
+      "A machine-learning project that forecasts stock movement from live data feeds using scikit-learn, Pandas, and Matplotlib. Deployed live on Streamlit.",
+    stack: ["Python", "scikit-learn", "Pandas", "Streamlit"],
+    url: "https://stock-predict-app-uzzii.streamlit.app/",
   },
 ];
 

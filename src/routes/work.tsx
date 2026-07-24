@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PROJECTS, MISC_PROJECTS, HAMZA } from "@/lib/portfolio-data";
 import { ProjectCard } from "@/components/ProjectCard";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -94,35 +95,61 @@ function Work() {
       </div>
 
       <div className="mt-8 grid gap-6 md:grid-cols-3 reveal">
-        {MISC_PROJECTS.map((project) => (
-          <article
-            key={project.title}
-            className="bg-card brutal rounded-2xl p-6 border-2 border-ink"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                  {project.where}
-                </p>
-                <h3 className="mt-2 font-display text-3xl">{project.title}</h3>
-              </div>
-              <span className="font-mono text-xs px-2 py-1 bg-lime rounded-md brutal-sm">
-                {project.year}
-              </span>
-            </div>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{project.blurb}</p>
-            <div className="mt-5 flex flex-wrap gap-1.5">
-              {project.stack.map((stackItem) => (
-                <span
-                  key={stackItem}
-                  className="font-mono text-[10px] px-2 py-0.5 bg-muted border border-ink/20 rounded"
-                >
-                  {stackItem}
+        {MISC_PROJECTS.map((project) => {
+          const CardContent = (
+            <>
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                    {project.where}
+                  </p>
+                  <h3 className="mt-2 font-display text-3xl flex items-center gap-1 group-hover:text-lime transition-colors">
+                    {project.title}
+                    {project.url && <ArrowUpRight className="w-5 h-5 shrink-0 transition-transform group-hover:rotate-45" />}
+                  </h3>
+                </div>
+                <span className="font-mono text-xs px-2 py-1 bg-lime text-ink font-bold rounded-md brutal-sm shrink-0">
+                  {project.year}
                 </span>
-              ))}
-            </div>
-          </article>
-        ))}
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{project.blurb}</p>
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {project.stack.map((stackItem) => (
+                  <span
+                    key={stackItem}
+                    className="font-mono text-[10px] px-2 py-0.5 bg-muted border border-ink/20 rounded"
+                  >
+                    {stackItem}
+                  </span>
+                ))}
+              </div>
+              {project.url && (
+                <div className="mt-5 pt-3 border-t border-dashed border-ink/20 flex items-center justify-between font-mono text-xs text-lime">
+                  <span>Live App Demo ↗</span>
+                </div>
+              )}
+            </>
+          );
+
+          return project.url ? (
+            <a
+              key={project.title}
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group bg-card brutal brutal-hover rounded-2xl p-6 border-2 border-ink block transition-transform"
+            >
+              {CardContent}
+            </a>
+          ) : (
+            <article
+              key={project.title}
+              className="bg-card brutal rounded-2xl p-6 border-2 border-ink"
+            >
+              {CardContent}
+            </article>
+          );
+        })}
       </div>
     </div>
   );
