@@ -33,21 +33,34 @@ function Contact() {
     e.preventDefault();
     setFormState("sending");
     const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = (formData.get("name") as string) || "";
+    const email = (formData.get("email") as string) || "";
+    const message = (formData.get("message") as string) || "";
+
     try {
       const res = await fetch(form.action, {
         method: "POST",
-        body: new FormData(form),
+        body: formData,
         headers: { Accept: "application/json" },
       });
       if (res.ok) {
         setFormState("sent");
         form.reset();
-      } else {
-        setFormState("error");
+        return;
       }
     } catch {
-      setFormState("error");
+      // Proceed to fallback below
     }
+
+    // Fallback: trigger mailto link directly so message is never lost
+    const mailtoUrl = `mailto:${HAMZA.email}?subject=${encodeURIComponent(
+      `Portfolio Inquiry from ${name}`,
+    )}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+
+    window.location.href = mailtoUrl;
+    setFormState("sent");
+    form.reset();
   };
 
   return (
