@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PROJECTS, HAMZA } from "@/lib/portfolio-data";
-import { ArrowRight, Star, MessageCircle, Linkedin } from "lucide-react";
+import { ArrowRight, Star, MessageCircle, Linkedin, Github } from "lucide-react";
 import { lazy, Suspense } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useTextScramble } from "@/hooks/useTextScramble";
 
 // Use local image from the project's images folder
 const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.webp";
@@ -29,8 +31,12 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const featured = PROJECTS.slice(0, 3);
+  const revealRef = useScrollReveal<HTMLDivElement>();
+  const hamzaScramble = useTextScramble("Hamza", { delay: 200 });
+  const mehmoodScramble = useTextScramble("Mehmood", { delay: 500 });
+
   return (
-    <div className="grain">
+    <div className="grain" ref={revealRef}>
       {/* HERO */}
       <section className="relative overflow-hidden border-b-2 border-ink">
         <div className="absolute inset-0 -z-10">
@@ -50,10 +56,10 @@ function Home() {
               Hello, I'm
             </p>
             <h1 className="mt-3 font-display text-[clamp(3rem,11vw,9rem)] leading-[0.85]">
-              Hamza
+              {hamzaScramble.displayText}
               <br />
               <span className="relative inline-block">
-                <span className="relative z-10">Mehmood</span>
+                <span className="relative z-10">{mehmoodScramble.displayText}</span>
                 <span className="absolute -bottom-2 left-0 right-0 h-5 bg-lime z-0" />
               </span>
               <span className="text-pink">.</span>
@@ -78,8 +84,11 @@ function Home() {
             </div>
 
             <div className="mt-10 flex items-center gap-6 font-mono text-xs">
-              <Stat n="7" l="Projects shipped" />
+              <Stat n="6+" l="Projects shipped" />
               <Stat n="100%" l="Hands-on" />
+            </div>
+            <div className="mt-6 inline-flex items-center gap-2 px-3 py-1.5 bg-card brutal-sm rounded-full font-mono text-xs">
+              <span className="w-2 h-2 rounded-full bg-pink animate-pulse" /> Currently building: Nexivon Agency
             </div>
           </div>
 
@@ -110,7 +119,7 @@ function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-20 border-b-2 border-ink">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-20 border-b-2 border-ink reveal reveal-delay-1">
         <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
           / What I do
         </p>
@@ -141,13 +150,13 @@ function Home() {
         <Marquee />
       </Suspense>
       {/* FEATURED WORK */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-20">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-20 reveal reveal-delay-2">
         <div className="flex items-end justify-between mb-10 gap-4 flex-wrap">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-              / Landing pages
+              / Featured work
             </p>
-            <h2 className="mt-2 font-display text-5xl sm:text-7xl">Polished builds.</h2>
+            <h2 className="mt-2 font-display text-5xl sm:text-7xl">Selected projects.</h2>
           </div>
           <Link
             to="/work"
@@ -173,7 +182,7 @@ function Home() {
       </section>
 
       {/* CTA STRIP */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 pb-16">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 pb-16 reveal reveal-delay-3">
         <div className="relative bg-electric text-cream brutal-lg rounded-3xl p-10 sm:p-16 overflow-hidden">
           <div className="absolute top-4 right-6 font-mono text-xs opacity-70">
             / Let's collaborate

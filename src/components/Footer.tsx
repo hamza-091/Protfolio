@@ -1,5 +1,5 @@
 import { HAMZA } from "@/lib/portfolio-data";
-import { Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Linkedin, Mail, MessageCircle, Github } from "lucide-react";
 
 export function Footer() {
   return (
@@ -40,6 +40,15 @@ export function Footer() {
           >
             <Linkedin className="w-4 h-4" />
             LinkedIn
+          </a>
+          <a
+            href={HAMZA.github}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 py-1.5 sm:py-0 underline decoration-2 underline-offset-2 hover:text-lime transition-colors"
+          >
+            <Github className="w-4 h-4" />
+            GitHub
           </a>
         </div>
         <div className="font-mono text-sm space-y-2 md:text-right">

@@ -7,11 +7,10 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { HAMZA } from "@/lib/portfolio-data";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "../components/Nav";
 import { lazy, Suspense } from "react";
 
@@ -20,19 +19,28 @@ const Chatbot = lazy(() => import("../components/Chatbot").then((m) => ({ defaul
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <div className="grain flex min-h-[70vh] items-center justify-center px-4">
+      <div className="relative max-w-lg text-center">
+        <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-48 h-48 bg-lime blob opacity-30" />
+        <div className="absolute -bottom-12 right-0 w-32 h-32 bg-pink blob opacity-20" style={{ animationDelay: '-5s' }} />
+        <h1 className="relative font-display text-[10rem] leading-none">
+          4
+          <span className="relative inline-block">
+            <span className="relative z-10">0</span>
+            <span className="absolute -bottom-2 left-0 right-0 h-5 bg-lime z-0" />
+          </span>
+          4
+        </h1>
+        <p className="mt-4 font-display text-2xl">This page got lost<span className="text-pink">.</span></p>
+        <p className="mt-2 text-sm text-muted-foreground font-mono">
+          It happens. The page you're looking for doesn't exist or has been moved.
         </p>
-        <div className="mt-6">
+        <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-cream font-mono text-sm rounded-md brutal brutal-hover"
           >
-            Go home
+            Go home →
           </Link>
         </div>
       </div>
@@ -43,9 +51,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -118,7 +123,7 @@ function RootShell({ children }: { children: ReactNode }) {
         url: "/",
         jobTitle: HAMZA.role,
         email: `mailto:${HAMZA.email}`,
-        sameAs: [HAMZA.linkedin],
+        sameAs: [HAMZA.linkedin, HAMZA.github],
       },
       {
         "@type": "WebSite",

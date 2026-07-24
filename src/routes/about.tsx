@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 // Use local image from /images folder
 const hamzaImgPath = "/images/Gemini_Generated_Image_twmr2twmr2twmr2t.webp";
 import { HAMZA } from "@/lib/portfolio-data";
@@ -25,27 +26,27 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const SKILLS = [
-  "JavaScript (ES6+)",
-  "TypeScript",
-  "Python",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Tailwind CSS",
-  "OpenAI API",
-  "Claude API",
-  "Twilio",
-  "n8n Workflows",
-  "LangChain",
-  "MongoDB",
-  "MySQL",
-  "Git/GitHub",
-  "REST APIs",
-  "Vercel",
-  "Render",
-  "WordPress",
-  "SEO",
+const SKILLS: { name: string; tip: string }[] = [
+  { name: "JavaScript (ES6+)", tip: "Primary language — used across all projects" },
+  { name: "TypeScript", tip: "Type-safe development for production apps" },
+  { name: "Python", tip: "ML & data science — Stock Prediction, UNITZERO" },
+  { name: "React", tip: "Core frontend framework — 4+ projects" },
+  { name: "Next.js", tip: "Almas voice agent — SSR & API routes" },
+  { name: "Node.js", tip: "Backend for Shrinkr, SmartPOS, Almas" },
+  { name: "Tailwind CSS", tip: "Primary styling — used in all React projects" },
+  { name: "OpenAI API", tip: "GPT-4 in Almas, GPT-3.5 in Email Genie" },
+  { name: "Claude API", tip: "AI integration & automation workflows" },
+  { name: "Twilio", tip: "Voice telephony in Almas — real-time calls" },
+  { name: "n8n Workflows", tip: "Automation & integration pipelines" },
+  { name: "LangChain", tip: "AI agent orchestration & chaining" },
+  { name: "MongoDB", tip: "Database for Shrinkr & Almas" },
+  { name: "MySQL", tip: "Database for SmartPOS" },
+  { name: "Git/GitHub", tip: "Version control — all projects" },
+  { name: "REST APIs", tip: "API design & integration" },
+  { name: "Vercel", tip: "Deployment platform — portfolio & projects" },
+  { name: "Render", tip: "Backend hosting for Shrinkr" },
+  { name: "WordPress", tip: "MichaelThal.com — client delivery" },
+  { name: "SEO", tip: "Technical SEO, schema, meta optimization" },
 ];
 
 const TIMELINE = [
@@ -94,8 +95,9 @@ const TIMELINE = [
 ];
 
 function About() {
+  const revealRef = useScrollReveal();
   return (
-    <div className="grain mx-auto max-w-7xl px-4 sm:px-6 py-16">
+    <div ref={revealRef} className="grain mx-auto max-w-7xl px-4 sm:px-6 py-16">
       <div className="grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5 lg:sticky lg:top-24">
           <div className="relative w-full max-w-sm mx-auto">
@@ -124,59 +126,68 @@ function About() {
             <p>
               <span className="text-muted-foreground">Education</span> → BSc Computer Science (2026)
             </p>
+            <p>
+              <span className="text-muted-foreground">GitHub</span> →{" "}
+              <a href={HAMZA.github} target="_blank" rel="noreferrer" className="underline decoration-2 underline-offset-2 hover:text-lime transition-colors">
+                hamza-091
+              </a>
+            </p>
           </div>
         </div>
 
         <div className="lg:col-span-7">
-          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            / About
-          </p>
-          <h1 className="mt-2 font-display text-6xl sm:text-7xl">
-            I build the
-            <br />
-            <span className="text-electric">web</span>, end to{" "}
-            <span className="text-pink">end</span>.
-          </h1>
-          <div className="mt-6 space-y-4 text-lg leading-relaxed">
-            <p>
-              I'm Hamza — a web developer and CS graduate. I design and build web applications,
-              marketing sites, and AI-powered integrations that work in production.
+          <div className="reveal">
+            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+              / About
             </p>
-            <p>
-              My capstone project, Almas, is a 24/7 voice calling agent for healthcare built with
-              Twilio, GPT-4 and Next.js — featuring dual-layer emergency detection that resolved 6/6
-              test scenarios. I've also delivered client sites on Fiverr and built a full digital
-              agency, Nexivon, offering web development and AI integration services.
-            </p>
-          </div>
+            <h1 className="mt-2 font-display text-6xl sm:text-7xl">
+              I build the
+              <br />
+              <span className="text-electric">web</span>, end to{" "}
+              <span className="text-pink">end</span>.
+            </h1>
+            <div className="mt-6 space-y-4 text-lg leading-relaxed">
+              <p>
+                I'm Hamza — a web developer and CS graduate. I design and build web applications,
+                marketing sites, and AI-powered integrations that work in production.
+              </p>
+              <p>
+                My capstone project, Almas, is a 24/7 voice calling agent for healthcare built with
+                Twilio, GPT-4 and Next.js — featuring dual-layer emergency detection that resolved 6/6
+                test scenarios. I've also delivered client sites on Fiverr and built a full digital
+                agency, Nexivon, offering web development and AI integration services.
+              </p>
+            </div>
 
-          <div className="mt-8">
-            <a
-              href="/files/hamza-cv.pdf"
-              download="Hamza_Mehmood_Resume.pdf"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-ink text-cream font-mono text-sm rounded-md brutal brutal-hover"
-            >
-              Download CV →
-            </a>
+            <div className="mt-8">
+              <a
+                href="/files/hamza-cv.pdf"
+                download="Hamza_Mehmood_Resume.pdf"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-ink text-cream font-mono text-sm rounded-md brutal brutal-hover"
+              >
+                Download CV →
+              </a>
+            </div>
           </div>
 
           {/* SKILLS */}
-          <div className="mt-14">
+          <div className="mt-14 reveal">
             <h2 className="font-display text-4xl">Stack.</h2>
             <div className="mt-5 flex flex-wrap gap-2">
               {SKILLS.map((s) => (
                 <span
-                  key={s}
-                  className="font-mono text-xs px-3 py-1.5 bg-card brutal-sm rounded-md"
+                  key={s.name}
+                  className="group relative font-mono text-xs px-3 py-1.5 bg-card brutal-sm rounded-md hover:bg-lime hover:-translate-y-0.5 transition-all cursor-default"
                 >
-                  {s}
+                  {s.name}
+                  <span className="tooltip">{s.tip}</span>
                 </span>
               ))}
             </div>
           </div>
 
           {/* TIMELINE */}
-          <div className="mt-14">
+          <div className="mt-14 reveal">
             <h2 className="font-display text-4xl">Experience.</h2>
             <ol className="mt-6 space-y-5">
               {TIMELINE.map((t, i) => (
@@ -193,7 +204,7 @@ function About() {
           </div>
 
           {/* CERTS */}
-          <div className="mt-14 bg-lime brutal rounded-2xl p-6">
+          <div className="mt-14 bg-lime brutal rounded-2xl p-6 reveal">
             <h2 className="font-display text-3xl">Certifications.</h2>
             <ul className="mt-3 space-y-1 font-mono text-sm">
               <li>· Data Science Internship — UNITZERO (Pvt) Limited, 2025</li>

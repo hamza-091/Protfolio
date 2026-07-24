@@ -214,4 +214,63 @@
       transform: translateY(0) scale(1);
     }
   }
+
+  /* Scroll-reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 {
+    transition-delay: 0.1s;
+  }
+  .reveal-delay-2 {
+    transition-delay: 0.2s;
+  }
+  .reveal-delay-3 {
+    transition-delay: 0.3s;
+  }
+  .reveal-delay-4 {
+    transition-delay: 0.4s;
+  }
+
+  /* Tooltips */
+  .tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+    white-space: nowrap;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    pointer-events: none;
+    opacity: 0;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    z-index: 30;
+  }
+  .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--ink);
+  }
+  .group:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
 }

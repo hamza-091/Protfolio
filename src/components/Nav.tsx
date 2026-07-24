@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Github } from "lucide-react";
 
 const links = [
   { to: "/", label: "Home" },
@@ -33,6 +33,15 @@ export function Nav() {
                 {l.label}
               </Link>
             ))}
+          <a
+            href="https://github.com/hamza-091"
+            target="_blank"
+            rel="noreferrer"
+            className="px-2 py-1 sm:px-2.5 sm:py-1.5 font-mono rounded-md hover:bg-lime transition-colors"
+            aria-label="GitHub"
+          >
+            <Github className="w-4 h-4" />
+          </a>
           <Link
             to="/contact"
             className="ml-0.5 inline-flex px-2.5 py-1 text-sm sm:px-3 sm:py-1.5 sm:text-sm font-mono bg-pink text-white brutal-sm brutal-hover rounded-md"

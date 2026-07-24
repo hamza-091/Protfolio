@@ -9,13 +9,10 @@ const accentBg: Record<Project["accent"], string> = {
 };
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
-  return (
-    <a
-      href={project.url}
-      target="_blank"
-      rel="noreferrer"
-      className={`group relative block brutal brutal-hover rounded-2xl overflow-hidden bg-card ${project.rotate} hover:rotate-0 transition-transform`}
-    >
+  const cardClasses = `group relative block brutal brutal-hover rounded-2xl overflow-hidden bg-card ${project.rotate} hover:rotate-0 transition-transform`;
+
+  const content = (
+    <>
       <span className="tape -top-2 left-8 rotate-[-6deg]" aria-hidden />
       <div
         className={`${accentBg[project.accent]} px-5 py-3 flex items-center justify-between border-b-2 border-ink`}
@@ -25,6 +22,11 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             {String(index + 1).padStart(2, "0")}
           </span>
           <span className="font-mono text-xs uppercase tracking-widest">{project.tag}</span>
+          {project.flagship && (
+            <span className="font-mono text-[10px] px-2 py-0.5 bg-electric text-cream rounded-full brutal-sm">
+              🔥 Flagship
+            </span>
+          )}
         </div>
         <span className="font-mono text-xs">{project.year}</span>
       </div>
@@ -44,7 +46,9 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
       <div className="p-5 bg-card">
         <div className="flex items-start justify-between gap-3">
           <h3 className="font-display text-3xl">{project.title}</h3>
-          <ArrowUpRight className="w-6 h-6 shrink-0 transition-transform group-hover:rotate-45" />
+          {project.url && (
+            <ArrowUpRight className="w-6 h-6 shrink-0 transition-transform group-hover:rotate-45" />
+          )}
         </div>
         <p className="mt-2 text-sm text-muted-foreground">{project.blurb}</p>
         {project.challengeSolution && (
@@ -63,6 +67,21 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           ))}
         </div>
       </div>
-    </a>
+    </>
   );
+
+  if (project.url) {
+    return (
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noreferrer"
+        className={cardClasses}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return <div className={cardClasses}>{content}</div>;
 }
