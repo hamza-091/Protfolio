@@ -34,8 +34,8 @@ export const PROJECTS: Project[] = [
       "A 24/7 inbound calling system for healthcare built with Twilio, GPT-4, Next.js, and MongoDB. Features dual-layer emergency detection, live call transcripts, and an admin dashboard with real-time flags.",
     challengeSolution:
       "Challenge: Healthcare facilities need round-the-clock call handling with reliable emergency detection. Solution: Built a voice agent using Twilio for telephony and GPT-4 for natural language understanding, with dual-layer emergency detection that resolved 6/6 test scenarios. Includes an admin dashboard with live transcripts and automatic flag escalation.",
-    url: null,
-    image: "/images/almas-showcase.webp",
+    url: "https://aicallingagent.vercel.app/dashboard",
+    image: "/images/almas-dashboard.webp",
     accent: "electric",
     rotate: "rotate-0",
     year: "2025–26",

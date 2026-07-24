@@ -51,31 +51,77 @@ function Work() {
             <div className="absolute top-4 right-6 font-mono text-xs text-cream/50">/ Flagship project</div>
             <div className="absolute -top-20 -right-20 w-72 h-72 bg-electric/20 blob opacity-40" />
             <div className="absolute -bottom-16 -left-16 w-56 h-56 bg-lime/10 blob opacity-30" style={{ animationDelay: '-6s' }} />
-            <span className="inline-flex items-center gap-2 px-3 py-1 bg-electric text-cream font-mono text-xs rounded-full brutal-sm mb-6">
-              🔥 Capstone Project
-            </span>
-            <h2 className="font-display text-5xl sm:text-7xl text-cream">
-              {PROJECTS[0].title}<span className="text-lime">.</span>
-            </h2>
-            <p className="mt-2 font-mono text-sm text-cream/60 uppercase tracking-widest">{PROJECTS[0].tag}</p>
-            <p className="mt-4 max-w-2xl text-lg text-cream/80 leading-relaxed">{PROJECTS[0].blurb}</p>
-            {PROJECTS[0].stats && (
-              <div className="mt-8 flex flex-wrap gap-6">
-                {PROJECTS[0].stats.map((s) => (
-                  <div key={s.label} className="bg-cream/10 brutal-sm rounded-xl px-5 py-3">
-                    <p className="font-display text-2xl text-lime">{s.value}</p>
-                    <p className="font-mono text-xs text-cream/60 mt-1">{s.label}</p>
+            
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7">
+                <span className="inline-flex items-center gap-2 px-3 py-1 bg-electric text-cream font-mono text-xs rounded-full brutal-sm mb-6">
+                  🔥 Capstone Project
+                </span>
+                <h2 className="font-display text-5xl sm:text-7xl text-cream">
+                  {PROJECTS[0].title}<span className="text-lime">.</span>
+                </h2>
+                <p className="mt-2 font-mono text-sm text-cream/60 uppercase tracking-widest">{PROJECTS[0].tag}</p>
+                <p className="mt-4 text-lg text-cream/80 leading-relaxed">{PROJECTS[0].blurb}</p>
+                
+                {PROJECTS[0].stats && (
+                  <div className="mt-6 flex flex-wrap gap-4">
+                    {PROJECTS[0].stats.map((s) => (
+                      <div key={s.label} className="bg-cream/10 brutal-sm rounded-xl px-4 py-2.5">
+                        <p className="font-display text-2xl text-lime">{s.value}</p>
+                        <p className="font-mono text-xs text-cream/60 mt-0.5">{s.label}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                )}
+                
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {PROJECTS[0].stack.map((s) => (
+                    <span key={s} className="font-mono text-xs px-3 py-1 bg-cream/10 border border-cream/20 rounded-md text-cream/80">{s}</span>
+                  ))}
+                </div>
+
+                {PROJECTS[0].url && (
+                  <div className="mt-8">
+                    <a
+                      href={PROJECTS[0].url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3.5 bg-lime text-ink font-mono text-sm font-bold rounded-md brutal brutal-hover"
+                    >
+                      Launch Live Dashboard <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                )}
               </div>
-            )}
-            <div className="mt-6 flex flex-wrap gap-2">
-              {PROJECTS[0].stack.map((s) => (
-                <span key={s} className="font-mono text-xs px-3 py-1 bg-cream/10 border border-cream/20 rounded-md text-cream/80">{s}</span>
-              ))}
+
+              {/* Preview Image */}
+              <div className="lg:col-span-5">
+                <a
+                  href={PROJECTS[0].url ?? "#"}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative block brutal-lg rounded-2xl overflow-hidden bg-muted border-2 border-cream/20"
+                >
+                  <img
+                    src={PROJECTS[0].image}
+                    alt={PROJECTS[0].title}
+                    width={600}
+                    height={375}
+                    className="w-full h-auto object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                    <span className="font-mono text-xs text-cream bg-electric px-3 py-1.5 rounded-md brutal-sm flex items-center gap-1">
+                      View Dashboard <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </a>
+              </div>
             </div>
+
             {PROJECTS[0].challengeSolution && (
-              <p className="mt-6 text-sm border-t border-cream/10 pt-4 text-cream/60 leading-relaxed max-w-2xl">{PROJECTS[0].challengeSolution}</p>
+              <p className="mt-8 text-sm border-t border-cream/10 pt-4 text-cream/60 leading-relaxed">
+                {PROJECTS[0].challengeSolution}
+              </p>
             )}
           </div>
         </section>
