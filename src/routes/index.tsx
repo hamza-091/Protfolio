@@ -88,7 +88,7 @@ function Home() {
               <Stat n="100%" l="Hands-on" />
             </div>
             <div className="mt-6 inline-flex items-center gap-2 px-3 py-1.5 bg-card brutal-sm rounded-full font-mono text-xs">
-              <span className="w-2 h-2 rounded-full bg-pink animate-pulse" /> Currently building: Nexivon Agency
+              <span className="w-2 h-2 rounded-full bg-pink animate-pulse" /> Currently building: AI Agents & Modern Web Apps
             </div>
           </div>
 

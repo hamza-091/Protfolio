@@ -154,8 +154,8 @@ function About() {
               <p>
                 My capstone project, Almas, is a 24/7 voice calling agent for healthcare built with
                 Twilio, GPT-4 and Next.js — featuring dual-layer emergency detection that resolved 6/6
-                test scenarios. I've also delivered client sites on Fiverr and built a full digital
-                agency, Nexivon, offering web development and AI integration services.
+                test scenarios. I've also delivered client sites on Fiverr, offering web development and AI
+                integration services.
               </p>
             </div>
 
@@ -201,15 +201,6 @@ function About() {
                 </li>
               ))}
             </ol>
-          </div>
-
-          {/* CERTS */}
-          <div className="mt-14 bg-lime brutal rounded-2xl p-6 reveal">
-            <h2 className="font-display text-3xl">Certifications.</h2>
-            <ul className="mt-3 space-y-1 font-mono text-sm">
-              <li>· Data Science Internship — UNITZERO (Pvt) Limited, 2025</li>
-              <li>· Bahria University — BSc Computer Science, 2026</li>
-            </ul>
           </div>
         </div>
       </div>
